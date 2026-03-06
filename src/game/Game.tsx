@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import useGameStore from '../hooks/useGameStore'
-import { useAudio } from '../hooks/useAudio'
 import StoryEngine from '../engine/StoryEngine'
 import StoryPanel from '../components/StoryPanel'
 import DecisionButtons from '../components/DecisionButtons'
@@ -9,8 +8,6 @@ import SanityMeter from '../components/SanityMeter'
 import EvidenceTracker from '../components/EvidenceTracker'
 import StartScreen from '../components/StartScreen'
 import EndingScreen from '../components/EndingScreen'
-import AudioToggle from '../components/AudioToggle'
-import ThemeToggle from '../components/ThemeToggle'
 
 const engine = new StoryEngine()
 
@@ -32,7 +29,6 @@ function Game() {
     resetGame,
   } = useGameStore()
 
-  const { startAmbient, playEffect } = useAudio()
   const [currentStory, setCurrentStory] = useState('')
   const [decisions, setDecisions] = useState<any[]>([])
   const [ending, setEnding] = useState<EndingType>(null)
@@ -41,9 +37,9 @@ function Game() {
   // Start ambient audio when game begins
   useEffect(() => {
     if (playerName) {
-      startAmbient()
+      // Audio removed
     }
-  }, [playerName, startAmbient])
+  }, [playerName])
 
   // Update story when level or game state changes
   useEffect(() => {
@@ -65,13 +61,12 @@ function Game() {
 
       // Trigger psychological effects at low sanity
       if (sanity < 40) {
-        playEffect('whisper')
         setShowPsychologicalEffect(true)
         setTimeout(() => setShowPsychologicalEffect(false), 3000)
       }
 
       if (sanity < 20) {
-        playEffect('heartbeat')
+        // Audio removed
       }
     }
   }, [playerName, currentLevel, alive, sanity, playEffect])
@@ -145,8 +140,7 @@ function Game() {
           <span className="text-sm text-gray-500">Level {currentLevel}/10</span>
         </div>
         <div className="flex gap-2">
-          <ThemeToggle />
-          <AudioToggle />
+          {/* Audio and theme toggles removed */}
         </div>
       </div>
 
