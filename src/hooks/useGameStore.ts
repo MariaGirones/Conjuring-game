@@ -63,6 +63,16 @@ const useGameStore = create<GameState>()(
         evidence: state.evidence,
         sanity: state.sanity,
       }),
+      // Custom merge: apply only the fields partialize saves.
+      // playerName and alive are intentionally excluded so the game
+      // always starts at the intro screen, even if old localStorage
+      // data contains those keys from a previous build.
+      merge: (persisted, current) => ({
+        ...current,
+        ...(persisted as Partial<GameState>),
+        playerName: '',
+        alive: true,
+      }),
     }
   )
 )
