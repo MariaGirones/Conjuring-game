@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Bash(\"c:\\\\Users\\\\giron\\\\OneDrive\\\\Documentos\\\\CODE\\\\Conjuring-game\\\\docs\\\\.nojekyll\")"
+    ]
+  }
+}
