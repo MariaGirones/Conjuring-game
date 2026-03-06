@@ -85,6 +85,23 @@
       "description": "A transcription of what spoke on Warren Session 7. Reading it does something to the reader.",
       "usable": false,
       "rarity": "epic"
+    },
+    {
+      "id": "oil lamp",
+      "name": "Warren's Oil Lamp",
+      "description": "Found sealed in an attic trunk with Ed Warren's note. It lit itself when you lifted it. It should not have lit itself.",
+      "usable": true,
+      "sanityRestore": 20,
+      "useLabel": "Hold it close",
+      "useEffect": "The lamp's light is steady and genuinely clean — clean in a way this house has made you forget light can be. Whatever was pressing at the edges of the room retreats from it. Not far. But far enough to breathe.",
+      "rarity": "rare"
+    },
+    {
+      "id": "carolyn diary",
+      "name": "Carolyn Perron's Hidden Diary",
+      "description": "Found beneath a floorboard in the master bedroom. Written after the family officially fled. She came back. The last page addresses you by name.",
+      "usable": false,
+      "rarity": "epic"
     }
   ]
 }

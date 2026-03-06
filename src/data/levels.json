@@ -183,7 +183,7 @@
           "sanityChange": -28,
           "evidence": "Séance contact — pre-existing contract recovered, demonic signature confirmed",
           "item": "locket",
-          "nextLevel": 10
+          "nextLevel": 15
         }
       },
       {
@@ -218,7 +218,7 @@
           "sanityChange": -25,
           "evidence": "Pre-colonial ritual chamber — entity origin site, 400-year ritual cycle confirmed",
           "item": "cursed bone",
-          "nextLevel": 10
+          "nextLevel": 14
         }
       },
       {
@@ -251,7 +251,7 @@
           "text": "The corkboard tells the story of every investigator who entered this house after the Warrens. Fourteen people. The strings show how each of them moved through the house, what they found, when they stopped finding anything — when they stopped.\n\nEleven of the fourteen have no exit record. No discharge from the property. They are simply present on the board until they aren't.\n\nThe newest string is red. It traces the rooms you have already visited. Someone added it recently — the ink is still slightly wet. The string leads from this room to a final pin at the center of the board: THE FINAL CHAMBER. YOU WILL GO THERE. THIS IS NOT A PREDICTION.\n\nThe door unlocks behind you.",
           "sanityChange": -20,
           "evidence": "Investigation archive — 14 prior investigators, 11 unaccounted for",
-          "nextLevel": 10
+          "nextLevel": 11
         }
       },
       {
@@ -287,7 +287,7 @@
           "text": "You walk toward it. It walks toward you. The distance between you does not decrease at the rate it should.\n\nAt ten feet, you can see its face. Your face. But older. The eyes wrong — not the color, but the quality of what looks through them. It has been wearing your face for longer than you have been alive.\n\nAt five feet, it speaks. Your voice, your cadence, but the words are not yours: 'She has made room for you. There are worse things than becoming part of this house. The ones in the walls have each other.'\n\nYou reach for it. Your hand passes through. You are alone in the corridor. But you can still hear your own voice, from somewhere inside the walls, finishing a sentence you don't remember starting.",
           "sanityChange": -28,
           "evidence": "Displacement phenomenon — doppelganger contact, pre-possession warning",
-          "nextLevel": 10
+          "nextLevel": 12
         }
       },
       {
@@ -340,6 +340,173 @@
           "text": "Your legs fold. Not from weakness — from something older than resistance, the part of every living thing that knows when it is facing something it was not made to face.\n\nBathsheba does not smile. She is not pleased — she is simply right. She has always been right about this.\n\nShe steps forward. Her hand on your forehead is cold and then not cold — it is warm, it is mother-warm, it is the warmth of the house itself. You feel yourself expanding outward through the walls, into every room, into every story, into every name scratched into that stone.\n\nYou are the house now. You have always been the house. And the house is patient. The house is waiting.\n\nIt will not be long before someone else comes through the front door.",
           "ending": "POSSESSED",
           "sanityChange": -45
+        }
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "The Attic — Midnight",
+    "description": "Ed Warren sealed this hatch in 1973. Rowan-wood beams. A binding sigil painted in sacramental oil across the latch. His private journal explains why the attic required what the cellar did not: 'The attic is where the house keeps its memories. This house has memories it should not have. Things it has witnessed that have no business remaining.'\n\nThe sigil has been scratched away from below.\n\nThe hatch hangs open. The attic is an ordinary repository of discarded decades — steamer trunks, sheet-draped furniture, a pram from the early 1900s that should not be here since the Perrons had no infant. The sheets are shifting. Not from a draft. From whatever lies beneath them, rearranging itself without urgency in the dark.\n\nAt the center of the floor: a child's rocking horse, carved oak and horsehair mane. It is moving in a slow and steady rhythm. No mechanism. No child. No wind.\n\nThe temperature up here is body temperature. Precisely. The attic is warm with you in the way a room is warm when someone expected has finally arrived home.",
+    "decisions": [
+      {
+        "text": "Approach the rocking horse — stop it, document it, prove it is real",
+        "consequence": {
+          "text": "You press your palm against the horse's neck to stop it. The wood is warm — skin-warm, too warm for old oak in an unheated attic — and the rocking ceases for a moment.\n\nThen it begins again. The motion changes direction: toward you now, the way a horse rocks when a child leans forward to press their face against its neck for comfort.\n\nBeneath the smell of dust and long-sealed wood, you catch something that should not exist here: the clean, warm scent of a child's hair. Recent. Alive. Someone small pressed their face against this neck recently, and that someone should not be in this house, and that someone does not appear in any rational inventory of who is here tonight.\n\nOn the saddlehorn, carved into the old paint in small, careful letters: '{playerName} WILL STAY.'\n\nThe carving is fresh. The paint curl is still slightly lifted at the edges. Someone carved this tonight. Someone who knew you were coming carved this tonight and you did not hear them do it.",
+          "sanityChange": -22,
+          "evidence": "Attic rocking horse — warm, active, personalized inscription carved tonight",
+          "nextLevel": 12
+        }
+      },
+      {
+        "text": "Read what's scratched into the floorboards — the markings spiral across the entire floor",
+        "consequence": {
+          "text": "The scratches spiral outward from a point near the hatch, growing in size and urgency as they move toward the walls — as though whoever wrote this gained certainty as they went, or lost the ability to write small.\n\nThe innermost text is a prayer. The middle rings are desperate requests. The outer rings are not addressed to God.\n\nThe outermost ring is scratched in the wide, ragged gouges of someone who had lost control of their fine motor function but had not lost their need to write — a sentence in every language you recognize and several you do not, circling the entire perimeter of the attic floor:\n\nSHE IS IN THE WALLS AND THE WALLS ARE EVERYWHERE AND YOU CANNOT LEAVE THE WALLS.\n\nWhile you have been reading, the hatch has closed. You did not close it. You did not hear it close. It is closed now, and from the other side — at the exact interval of a resting heartbeat — something knocks.\n\nThe knocking is patient. It has all night.",
+          "sanityChange": -20,
+          "evidence": "Attic floor inscriptions — spiral text in 9 languages, hatch sealed from below",
+          "nextLevel": 13
+        }
+      },
+      {
+        "text": "Force open the locked trunk in the corner — it bears a Warren wax seal",
+        "consequence": {
+          "text": "The padlock is sealed twice over — brass lock and a Warren cross pressed into wax. You break both. Inside, wrapped in oilcloth and tied with cord: an oil lantern, still half-full, and a folded note on Warren letterhead.\n\n'If you are opening this, the house let you find the attic. It only reveals this room when it wants something specific from a specific person. The lamp burns clean. Carry it. In this house, light is not for seeing — it is for being seen by the right things and not the wrong ones. Ours burned eleven hours. God willing, yours will last longer. Do not let it go out. — E.W.'\n\nYou lift the lamp. It ignites without a match, without a striker, without any mechanism you can identify. The flame is steady and clean, and it illuminates the attic in a way your flashlight has not — in the lamp's light, the sheet-draped shapes around you cast shadows that match their shapes exactly.\n\nYour flashlight's shadows did not match. Something in this room has been casting wrong shadows all along and you did not notice until now.",
+          "item": "oil lamp",
+          "evidence": "Warren attic cache — lamp and letter recovered, shadow anomaly confirmed",
+          "nextLevel": 15
+        }
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "The Master Bedroom — The Hour of Two",
+    "description": "Carolyn Perron described the entity's method in her testimony: 'It never hurt me when it moved me. It moved me the way a mother moves a sleeping child — two cold hands beneath my arms, lifting me from the mattress with patience, making sure I would not be startled by the motion. The worst part was not the fear. The worst part was that it cared. It needed me intact. It needed me for something I spent years trying not to identify.'\n\nThe mattress still bears the impression of something that used this bed long after the Perrons fled. The springs have deformed around an outline too long and too narrow, with the wrong angles at what should be joints. Whatever lay here lay here regularly. Whatever lay here considered this its bed.\n\nCarolyn's rosary hangs from the bedpost. She tied it nightly in one continuous loop — her testimony is specific on this point. It hangs now in seven distinct knots, each one a different type. Each one a sailor's knot. No one in the Perron family sailed.\n\nThe inside of the bedroom door bears the evidence of someone who tried to leave for a long time. The scratches begin at handle height — controlled, methodical. They descend toward the floor in a trajectory that records the progressive loss of hope.",
+    "decisions": [
+      {
+        "text": "Examine the rosary — seven knots have specific demonological significance",
+        "consequence": {
+          "text": "Father Javier's 1972 paper documented 'knotwork communication' — entities that cannot speak aloud in near-sacred spaces sometimes encode messages in physical materials left by the living. Seven knots, read in demonological sequence:\n\nCOMING. COMING. ALREADY HERE. YOU CANNOT LEAVE. YOU HAVE NEVER LEFT. SHE KNOWS YOU. WELCOME BACK.\n\n'Welcome back.'\n\nYou have not been here before. You are certain of this. But the rosary is not addressing a first-time visitor. The rosary is addressing someone known across multiple visits — multiple instances of coming and forgetting and coming again.\n\nWhat settles into you then is worse than fear. It is the physical, vertiginous certainty that you have stood in this room before. That your hands have touched this rosary before. That you have read these knots and been afraid and then forgotten, and the thing which tied them has been waiting through each forgetting with perfect patience.\n\nYou do not remember your previous visits. You are beginning to understand that you never do.",
+          "sanityChange": -25,
+          "evidence": "Carolyn's rosary — knotwork message decoded, multiple prior visitations implied",
+          "nextLevel": 13
+        }
+      },
+      {
+        "text": "Lie on the bed — investigators sometimes use themselves as receptors for psychic residue",
+        "consequence": {
+          "text": "The mattress receives you with a particular absence of resistance — not the yield of worn springs but the accommodation of something that has made space for you specifically.\n\nYou close your eyes for what feels like a moment.\n\nWhen you open them, the ceiling is wrong. The room is the same room but in a different era — the wallpaper alive with a pattern you don't recognize, a candle on the nightstand that you didn't bring. A woman stands at the window with her back to you. Her posture is wrong — the angle of the shoulders, the length of the arms. She turns before you can speak.\n\nHer face is yours. Your face, but occupied differently. Behind your eyes, something patient drives.\n\nYou sit upright. You are alone. The ceiling is correct. Forty-three minutes have passed.\n\nOn the pillow beside you, pressed into the cotton: the impression of a child's hand. Palm-down. Fingers spread. Still warm.",
+          "sanityChange": -28,
+          "evidence": "Psychometric impression — temporal lapse, entity face-use confirmed, child-hand impression",
+          "nextLevel": 11
+        }
+      },
+      {
+        "text": "Pry up the loose floorboard — the edge is raised, as though pushed from below",
+        "consequence": {
+          "text": "The board lifts with a sound like a held breath finally released. Beneath it: a composition notebook, its cover warped by years, sealed with a rubber band that crumbles when touched.\n\nCarolyn Perron's handwriting — identifiable from the Warren files. But this notebook is not in the files. It was never found by the Warrens. The first entry is dated 1974. The last is dated three weeks after the Perrons officially fled. Three weeks after they escaped, she came back alone, without telling anyone.\n\nMost of the diary is unreadable — ink run by water or something else, entire pages pressed so hard the pen went through. The legible parts are worse for their clarity.\n\nThe last page: 'She let me leave because she knew I would come back. She knows I always come back. I think she has known me longer than I have known myself. I think she has known all of us that long. I think {playerName} will find this, and I think by the time they read this line, it will already be true.'",
+          "item": "carolyn diary",
+          "evidence": "Carolyn Perron's hidden diary — post-departure return documented, personal address confirmed",
+          "nextLevel": 14
+        }
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "The Kitchen — 2:30 in the Morning",
+    "description": "Every knife in the block faces inward — blades oriented toward the center of the room, toward the chair at the head of the table. Not placed this way. Reoriented at some point when no one was watching. Either before you arrived, or while you were in other rooms, and you did not hear anything move.\n\nThe refrigerator hums at a frequency that is almost a note. Almost musical. Close enough that your body registers it as music played slightly wrong — the uncanny valley of sound, triggering unease without a nameable source.\n\nOn the refrigerator door, fixed with vegetable-shaped magnets: a child's drawing in dark crayon. The farmhouse, viewed from above. The floor plan is accurate — rooms correct, stairs correct, cellar access correct, details no child could know from memory alone. In every room of the house, a small figure. Eleven figures total.\n\nEach figure has a name beside it in careful, large child's letters. Ten of the names match the names in the investigation archive — the investigators who entered this house and stopped being accounted for.\n\nThe eleventh figure is in the kitchen. The name beside it is yours.\n\nThe drawing is not recent. The crayon has oxidized. The paper has yellowed. This drawing is decades old. Your name has been on it the entire time.",
+    "decisions": [
+      {
+        "text": "Document every detail of the drawing — it's the most concrete evidence of premonition you've found",
+        "consequence": {
+          "text": "You photograph the drawing. Sketch it. Write down every name beside every figure.\n\nWhile you write, the drawing changes. You do not see it change. You look down and it is different from what you photographed a moment ago. The eleven figures remain, but several have migrated to different rooms. The migration tracks where you've been tonight.\n\nThe figure in the kitchen — your figure — now has an addition: a shape behind it. Taller. Standing close. One hand raised to rest on your figure's shoulder.\n\nYou feel, at that exact moment, a pressure on your shoulder. Distinct. Specific. The precise weight and placement of a hand.\n\nYou do not turn around. You have read enough of the Warrens' files to know what turning around in this moment would accomplish and what it would cost. You remain still.\n\nThe pressure on your shoulder does not move. It simply remains, patient and informed, as though it has been waiting for you to notice it for some time.",
+          "sanityChange": -20,
+          "evidence": "Kitchen drawing — prophetic floor plan, active tracking confirmed, physical contact",
+          "nextLevel": 14
+        }
+      },
+      {
+        "text": "Examine the seven clocks — none of them show the same time",
+        "consequence": {
+          "text": "Seven clocks. Seven times. You write them down: 11:47 PM. 2:14 AM. 3:00 AM. Then three that show not hours but years: 1863. 1843. 1731. The seventh clock's face has been removed, and inside — visible through the glass, pressed between the gears — a folded photograph.\n\nYou open the clock. The photograph shows this kitchen. The table in the same position. The knives in the same block. The chair at the head of the table occupied by a woman whose face is turned away from the camera. On the back, in pencil: March 1863. Bathsheba Sherman's kitchen, over a century before the Perrons moved in.\n\nThe kitchen has never been rearranged. Not once in the house's history. Not because no one thought to move the furniture. Because the presence that arranged it has never left, and a house does not change around a permanent resident.\n\nOnly one clock in this house shows the correct time. The one that shows 3:00 AM. That clock has always been right. It always will be.",
+          "sanityChange": -15,
+          "evidence": "Kitchen clocks — 1863 photograph, Bathsheba's continuous occupancy confirmed",
+          "nextLevel": 11
+        }
+      },
+      {
+        "text": "Sit at the head of the table — the presence is strongest here, use it as an anchor point",
+        "consequence": {
+          "text": "You sit. The room arranges itself around you.\n\nFor a long time: nothing. The refrigerator hum. The knives at the edge of your vision. Your own breathing, which sounds wrong in here — too loud, too biological, too alive for this kitchen at this hour.\n\nThen: the chair at the table's far end shifts backward. The sound of wooden legs on wooden floor. The creak of weight settling onto old joinery.\n\nSomething sits across from you.\n\nThe air at the table's other end is occupied in a way that the air beside you is not. You feel the displacement the way you feel the presence of another person in a dark room — not seen, but taking up the space that nothing was taking up before.\n\nThen: breathing. Not yours. A single breath longer than any human lung capacity, taken at intervals longer than any human need for oxygen. Slow. Comfortable. Intimate.\n\nIt breathes. You breathe. At two-thirty in the morning in the kitchen of the Perron farmhouse, you share a table with something that has sat in this chair since before this house was built, since before this land was mapped, since before the word for what it is existed in any language living people still speak.\n\nIt says nothing. It is simply here. It has been at this table every morning with every family. It was here when Carolyn Perron made breakfast for her children. It has always been at the table.",
+          "sanityChange": -18,
+          "evidence": "Kitchen contact — entity co-presence confirmed, displacement and auditory phenomena",
+          "nextLevel": 15
+        }
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "The Oak Tree at 2AM",
+    "description": "The Warrens' files devote more pages to the oak tree than to any room in the house. Ed Warren's private note: 'The tree predates everything. The house, the town, the settlement. Whatever Bathsheba Sherman bound to this property in 1863 was already here before she arrived. She did not summon it. She found it. She made an arrangement with it that has not expired.'\n\nThe oak is three centuries old and sixty feet tall. Its bark is entirely covered in carved symbols — 312 of them catalogued by the Warrens across seven visits. Demonologists identified 289. The remaining 23 were unknown to any living tradition.\n\nThree small graves occupy the base of the tree. Unmarked. Predating the Sherman family. Dug not into the earth, the Warrens concluded, but up through it — the soil around each grave is always freshly disturbed, always, in any season, in any weather. Something visits them regularly from below.\n\nThe branches of the oak move in a wind you cannot feel. They move with an articulation that wood does not have — deliberate, reaching in directions that are not the direction of any wind tonight.\n\nThe tree is in the shape of a person who has been standing in the same place for a very long time.",
+    "decisions": [
+      {
+        "text": "Press your ear to the bark — the Warrens recorded sounds within the trunk",
+        "consequence": {
+          "text": "The bark is warm. Not the biological warmth of a tree's vascular activity — the warmth of something that generates heat the way a body generates heat, from a source inside.\n\nYou press your ear to the trunk.\n\nHeartbeats. Not one — dozens, layered and overlapping, each at a slightly different rhythm, each rhythm wrong in the same way: not quite human. Human-adjacent. Human-inflected. Father Javier's hypothesis, written in 1973: the tree was used as a binding-locus across multiple generations of ritual, and what persists inside it is the layered residue — not souls, but the shapes that souls leave behind when the soul itself is elsewhere.\n\nThen: something presses back. A palm-sized pressure against the inside of the bark at exactly the point your ear touches. Slow. Deliberate. Not aggressive — informational. It wants you to know it knows you're there.\n\nFrom inside the wood, in a voice like settling timber given direction: your name. Once. The way you say your own name when you are alone and no one is listening.",
+          "sanityChange": -22,
+          "evidence": "Oak tree — multiple heartbeat phenomenon, soul-binding locus, entity contact confirmed",
+          "nextLevel": 15
+        }
+      },
+      {
+        "text": "Kneel at the three graves — the disturbed soil means something is active here",
+        "consequence": {
+          "text": "The graves are shallow, or they were — something has been pressing the soil upward in increments too slow to observe across a single visit but too consistent to be geological. The grass around each grave has died in a perfect circle. The earth within each circle is dark and dense, saturated over a very long time with something organic.\n\nYou kneel at the nearest grave. You are going to document. You are not going to dig.\n\nThe soil shifts.\n\nNot erupts — shifts. The way earth shifts when something beneath it adjusts position after being still for a long time. Something that has become aware, from two feet below, of a warmth close enough to touch.\n\nAt the head of the grave, where a stone would be, the pressed grass forms a pattern. You photograph it.\n\nThe developed image is clear. The pattern spells a name. Not Bathsheba. Not any name in the Warrens' files or the archive or the cellar wall.\n\nYour name. Pressed into the soil from below. By something that has known you were coming long before you decided to come.",
+          "sanityChange": -25,
+          "evidence": "Pre-1800 graves — active disturbance from below, personalized marker confirmed",
+          "nextLevel": 13
+        }
+      },
+      {
+        "text": "Look into the sealed well — Ed Warren's seal is broken",
+        "consequence": {
+          "text": "The well cap is carved stone, ringed with crosses in the Warren style — 1973 work, done during the last official investigation. The crosses have been removed from the stone. Not worn away. Excised precisely, as though someone spent time on each one with patience and a narrow tool.\n\nYou look down.\n\nThe well is dry. The smell that rises is not of water or rot — it is the smell of the séance room: old smoke and the particular atmospheric pressure of a space that is perpetually occupied by something that does not breathe.\n\nFrom the bottom of the well, something looks up.\n\nYou cannot see it. The bottom is dark. But the attention from below is specific, directed, and focused on your face with the intensity of something that has not had anything to look at for a long time and finds this looking deeply satisfying.\n\nThen, clear and unhurried, rising from the stone shaft like sound in a speaking-tube: your name. Spoken in the flat, informational tone of someone reading from a list. As though your name is an item the well has been keeping in inventory. As though it has been waiting for the moment when the item on the list would finally arrive to be checked off.",
+          "sanityChange": -18,
+          "evidence": "Warren-sealed well — Warren crosses excised, auditory contact, attentive presence confirmed",
+          "nextLevel": 15
+        }
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Three O'Clock in the Morning",
+    "description": "The Devil's Hour. Every tradition of demonology identifies three in the morning as the inversion of three in the afternoon — the hour Roman Catholic theology identifies as the moment of Christ's death on the cross. If sanctity concentrates at 3 PM, then its inverse is true at the mirror: the demonic, the open, the hour when whatever is in this house stops maintaining the fiction that you might leave.\n\nThe fiction is over.\n\nYour watch stopped. Every clock in this house stopped simultaneously, at 3:00 AM exactly. You know this not only from the clocks — your body registered the change first: a shift in atmospheric pressure, a change in the quality of silence, the specific moment when the house ceased performing normalcy for your benefit.\n\nAll night, every room has been a corridor. Every corridor has been angled, imperceptibly, toward a single point below everything — below the passage, below the cellar, below the foundation, below what any building record should permit. You have been navigating toward the center of something for hours and only now understand this. The house has not been letting you explore. The house has been giving you a guided tour of itself, and the tour ends here.\n\nFrom below — from the chamber that every path through this house is a corridor toward — your name rises through the floor. Your name, in a voice that is exactly yours. The particular cadence you use when you speak your name to yourself, in the silence of your own head, when no one is listening.\n\nSomething in this house has been inside your head.\n\nSomething in this house has learned how to be you from the inside.",
+    "decisions": [
+      {
+        "text": "Descend. You have documented everything. You know what you are facing.",
+        "consequence": {
+          "text": "The stairs reveal themselves in the north wall, where there was no door. The house did not hide them — it simply waited until the hour made concealment unnecessary.\n\nThey descend in a spiral that the geometry of the building above cannot account for. The light below is sourceless: not darkness, not illumination, but the particular luminosity of a space that has been awake and waiting for a very long time.\n\nWith each step down, a degree of temperature drops, and a memory surfaces — your earliest memory, then a memory before your earliest memory, then a memory of a house that is also this house. A recurring dream from childhood that you cannot consciously recall but that your body navigates without hesitation. Your feet know these stairs.\n\nYou have been here before. Your body has always known how to get here.\n\nThe stairs end. The chamber opens.",
+          "sanityChange": -10,
+          "nextLevel": 10
+        }
+      },
+      {
+        "text": "Anoint every doorway with holy water first — buy what time you can",
+        "consequence": {
+          "text": "The holy water touches each threshold and the wood recoils — not visibly, not dramatically, but in the sudden change of pressure in the rooms beyond, a contraction of something that had been spread through the corridors like a gas.\n\nIt compresses. Everything you push back from the doorways gathers inward and downward, consolidating into the single point that has always been the point. You have cleaned the corridors. You have pushed the entity into the room where it is strongest and most entirely itself.\n\nLorraine Warren wrote: make leaving preferable to staying. Give it no choice. You have done something precisely adjacent to the opposite — you have made the house uncomfortable for it except in the one room where it cannot be made uncomfortable.\n\nThe door to the final chamber appears in the north wall. It opens slowly, the way a long-held breath is finally released. From below, in the sourceless light, something waits with the patience of something that has never needed to hurry.",
+          "sanityChange": -5,
+          "nextLevel": 10
+        }
+      },
+      {
+        "text": "Call out to it — demand it reveal itself before you descend",
+        "consequence": {
+          "text": "The silence after you call out is vast and aware.\n\nThen, from the walls, from the particular vibration of old timber against cold earth, a response — not words first, but a sensation: the sensation of being known completely. Not watched. Not observed. Comprehended. Every thought you have had in this house. Every moment of doubt and fear and the single moment of quiet confidence when you found the archive and believed you were beginning to understand what you faced.\n\nIt has been inside those moments.\n\nThe response shapes itself into something close enough to language that your body translates it before your mind can:\n\n'You already know where I am. You have always known where I am. You have always found your way here. Come, {playerName}. Come and finish what you began the first time you entered this house.'\n\nThe first time. This is the first time. You are certain of this.\n\nThen, with the particular bodily horror of a memory surfacing from somewhere you did not know it was kept — you are not certain. You are not certain at all.",
+          "sanityChange": -20,
+          "nextLevel": 10
         }
       }
     ]
