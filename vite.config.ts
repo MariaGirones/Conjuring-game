@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Relative base so assets resolve correctly under any GitHub Pages subdirectory
-  base: './',
+  // Absolute base path matching the GitHub Pages subdirectory
+  base: '/Conjuring-game/',
   plugins: [react()],
   build: {
     // Output to 'docs/' — matches the GitHub Pages source directory
