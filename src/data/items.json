@@ -1,0 +1,81 @@
+{
+  "items": [
+    {
+      "id": "lighter",
+      "name": "Lighter",
+      "description": "An old, rusted lighter. Still works.",
+      "effect": "Provides light in dark places. Sanity +2 in dark rooms.",
+      "rarity": "common"
+    },
+    {
+      "id": "flashlight",
+      "name": "Flashlight",
+      "description": "A heavy-duty flashlight. The beam is steady.",
+      "effect": "Provides powerful light. Sanity +5 in dark rooms.",
+      "rarity": "common"
+    },
+    {
+      "id": "holy water",
+      "name": "Holy Water",
+      "description": "Blessed water from an old chapel.",
+      "effect": "Protects against paranormal entities. Sanity +3.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "crucifix",
+      "name": "Crucifix",
+      "description": "An ancient religious artifact.",
+      "effect": "Provides spiritual protection. Can be used to banish weaker entities.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "confessional key",
+      "name": "Confessional Key",
+      "description": "A tarnished brass key that opens the confessional.",
+      "effect": "Required to open the confessional room.",
+      "rarity": "key"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "description": "An old film camera. The shutter still clicks.",
+      "effect": "Can capture paranormal phenomena. Evidence collected is more valuable.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "voice recorder",
+      "name": "Voice Recorder",
+      "description": "A vintage tape recorder with fresh batteries.",
+      "effect": "Captures EVP (Electronic Voice Phenomena). Evidence collected is more valuable.",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "locket",
+      "name": "Cameo Locket",
+      "description": "A delicate piece of jewelry containing a mysterious photograph.",
+      "effect": "Reveals secrets about the mansion's past. Sanity -2 but adds valuable evidence.",
+      "rarity": "rare"
+    },
+    {
+      "id": "cursed relic",
+      "name": "Cursed Relic",
+      "description": "A stone idol that radiates malevolent energy.",
+      "effect": "Increases paranormal sensitivity. Sanity -3 but attracts entities. Evidence is more valuable.",
+      "rarity": "rare"
+    },
+    {
+      "id": "cursed bone",
+      "name": "Cursed Bone",
+      "description": "A bone arranged with ritualistic precision.",
+      "effect": "Connects you to the mansion's past. Sanity -5 but reveals hidden truths.",
+      "rarity": "rare"
+    },
+    {
+      "id": "cursed book",
+      "name": "Forbidden Book",
+      "description": "A leather-bound book containing forbidden knowledge.",
+      "effect": "Reading grants terrifying insights. Sanity -10 but this is the key to understanding the entity.",
+      "rarity": "epic"
+    }
+  ]
+}

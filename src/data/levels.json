@@ -2,24 +2,33 @@
   {
     "id": 1,
     "title": "Entrance Hall",
-    "description": "You stand in the grand entrance hall of the Conjuring house. Shadows dance on the walls, and a cold breeze whispers your name.",
+    "description": "You stand before the Conjuring House—an imposing Victorian mansion shrouded in perpetual gloom. The brass door knocker catches the fading light. Your phone signal dies the moment you step through the threshold. The entrance hall stretches before you, adorned with faded portraits whose eyes seem to track your movement. The air is thick and cold. You hear the subtle sound of a music box playing somewhere deep within the house.",
     "decisions": [
       {
-        "text": "Enter the Chapel",
+        "text": "Head directly to the Chapel (left corridor)",
         "consequence": {
-          "text": "You step into the sacred space, feeling a presence watching you.",
-          "sanityChange": -5,
-          "item": "holy water",
+          "text": "Your footsteps echo across marble tiles. The portraits above seem to lean inward as you pass. An old chandelier sways gently despite the absence of wind. You smell incense—old and burnt.",
+          "sanityChange": -3,
+          "item": "lighter",
           "nextLevel": 2
         }
       },
       {
-        "text": "Descend to the Basement",
+        "text": "Descend to the Basement (the ominous stairs)",
         "consequence": {
-          "text": "The stairs creak under your feet. You hear distant screams.",
-          "sanityChange": -10,
+          "text": "The basement stairs creak under your weight. With each step down, the temperature drops. You hear distant, indecipherable whispering—and something that might be screaming, or wind. The air tastes like copper and dust.",
+          "sanityChange": -8,
           "evidence": "cold spot",
           "nextLevel": 3
+        }
+      },
+      {
+        "text": "Explore the Library (right corridor)",
+        "consequence": {
+          "text": "Ancient books line the walls. Many have no titles. A few are chained to their shelves with iron chains. As you walk, you notice every single book opens slightly as if to breathe. One falls at your feet unbidden.",
+          "sanityChange": -5,
+          "item": "flashlight",
+          "nextLevel": 8
         }
       }
     ]
@@ -27,22 +36,32 @@
   {
     "id": 2,
     "title": "Chapel",
-    "description": "The chapel is dimly lit by flickering candles. A cross hangs on the wall, but it seems to move when you're not looking.",
+    "description": "The chapel is illuminated by hundreds of flickering candles, yet the light seems to make shadows deeper. A distorted cross hangs above the altar—tilted at an impossible angle. The walls are covered in scratches. You notice something written in ash on the floor: 'SHE WATCHES'. A figure stands at the far end, but when you blink, it's gone. Was it ever there?",
     "decisions": [
       {
-        "text": "Pray at the altar",
+        "text": "Approach the altar and pray",
         "consequence": {
-          "text": "You feel a momentary peace, but then the candles extinguish.",
-          "sanityChange": 5,
+          "text": "As you kneel, the candles extinguish one by one, from back to front, moving toward you methodically. A voice—neither male nor female—whispers your name. You feel a hand on your shoulder. When you turn, there's nothing. But the feeling of being touched remains.",
+          "sanityChange": -12,
+          "evidence": "paranormal presence",
           "nextLevel": 4
         }
       },
       {
-        "text": "Search for hidden items",
+        "text": "Search the floor for the key to the Confessional",
         "consequence": {
-          "text": "You find a confessional key.",
-          "item": "key",
+          "text": "Under the scratches on the floor, you find a tarnished brass key. The moment you touch it, you hear a voice begging for forgiveness from inside the walls. The key pulses with warmth—then ice cold.",
+          "item": "confessional key",
           "nextLevel": 5
+        }
+      },
+      {
+        "text": "Examine the scratches on the walls",
+        "consequence": {
+          "text": "The scratches form patterns—almost like writing, but not quite. As you trace them with your fingers, you hear a child's laughter echoing through the chapel. It comes from behind the altar. When you look, you find a doll dressed in priestly robes, its button eyes staring directly at you.",
+          "sanityChange": -15,
+          "evidence": "ritual markings",
+          "nextLevel": 6
         }
       }
     ]
@@ -50,21 +69,34 @@
   {
     "id": 3,
     "title": "Basement",
-    "description": "The basement is damp and cold. Chains hang from the ceiling, and you see strange symbols on the walls.",
+    "description": "The basement is a labyrinth of stone. Chains hang from the ceiling, some still wearing remnants of old cloth and bone. Water drips from the ceiling, but it's too cold to be natural water. The walls are covered in older scratches—and symbols. Some glow faintly with a sickly phosphorescence. You notice a door at the far end, and another ascending back upstairs. A heavy smell permeates everything: earth, decay, and something else... something sacred.",
     "decisions": [
       {
-        "text": "Examine the symbols",
+        "text": "Examine the glowing symbols closely",
         "consequence": {
-          "text": "The symbols glow faintly. You record them as evidence.",
+          "text": "As your eyes focus on the symbols, they rearrange themselves. Your vision blurs. The symbols seem to spell out warnings in languages you don't speak but somehow understand: 'GET OUT', 'SHE IS HERE', 'STOP LOOKING'. Blood droplets form the letters. Then they fade.",
           "evidence": "ritual symbols",
-          "sanityChange": -15,
-          "nextLevel": 6
+          "sanityChange": -20,
+          "item": "voice recorder",
+          "nextLevel": 7
         }
       },
       {
-        "text": "Leave quickly",
+        "text": "Follow the chains to their origin",
         "consequence": {
-          "text": "You escape, but the door slams shut behind you.",
+          "text": "The chains lead to a stone chair embedded in the ground. As you approach, you hear a woman's voice singing a lullaby—hauntingly beautiful and heartbreaking. On the chair, you find a cameo locket. Inside is a photograph that becomes clearer the longer you stare at it. It shows the inside of the mansion... but wrong. Distorted.",
+          "sanityChange": -10,
+          "item": "locket",
+          "evidence": "ghost sighting",
+          "nextLevel": 2
+        }
+      },
+      {
+        "text": "Try the old door at the far end",
+        "consequence": {
+          "text": "The door resists at first, but it opens. A passage leads into complete darkness. You hear breathing—close, and deliberate. Not your own. You turn back and slam the door, but you hear it open again behind you as you ascend the stairs.",
+          "sanityChange": -8,
+          "evidence": "paranormal presence",
           "nextLevel": 1
         }
       }
@@ -73,23 +105,35 @@
   {
     "id": 4,
     "title": "Attic",
-    "description": "The attic is filled with old trunks and cobwebs. A rocking chair moves on its own.",
+    "description": "The attic is vast, filled with furniture under white sheets. To you, they look like motionless figures. A rocking chair in the corner moves on its own, creaking rhythmically. Cobwebs thick as gauze hang from every corner. Dust particles float in strange patterns—almost like they're being directed. You notice old trunks, a vanity with a cracked mirror, and in the corner, a child's bed with stains you don't want to examine closely.",
     "decisions": [
       {
-        "text": "Open a trunk",
+        "text": "Open the trunks and search for items",
         "consequence": {
-          "text": "You find an old camera.",
+          "text": "The first trunk contains old photographs—faces you feel you've seen before. The second contains clothes from another era. The third is empty except for a note in child's handwriting: 'Help me. She won't let me leave. My hands hurt from writing.' Your hands hurt in the same places.",
           "item": "camera",
-          "nextLevel": 7
+          "sanityChange": -18,
+          "evidence": "personal item",
+          "nextLevel": 9
         }
       },
       {
-        "text": "Sit in the chair",
+        "text": "Sit in the rocking chair",
         "consequence": {
-          "text": "The chair rocks violently. You see a ghost.",
+          "text": "The moment you sit, the chair wraps its motion around you as if of its own volition. You cannot move. In the cracked mirror opposite, you see yourself aged fifty years, eyes filled with ancient suffering. Then you see something else behind you. A small figure in white. When you blink, you're standing again. The chair is still rocking. Alone.",
           "evidence": "ghost sighting",
-          "sanityChange": -20,
-          "nextLevel": 8
+          "sanityChange": -25,
+          "item": "holy water",
+          "nextLevel": 2
+        }
+      },
+      {
+        "text": "Examine the vanity mirror",
+        "consequence": {
+          "text": "The mirror is cracked in a spiderweb pattern that resembles a face screaming. As you lean close, your reflection lasts a moment too long to move. You see your own mouth form words you're not speaking. The reflection pulls at the mirror from inside.",
+          "sanityChange": -22,
+          "evidence": "paranormal activity",
+          "nextLevel": 5
         }
       }
     ]
@@ -97,22 +141,33 @@
   {
     "id": 5,
     "title": "Confessional Room",
-    "description": "You enter the confessional. Whispers echo from the other side.",
+    "description": "The confessional stands alone in a small side room off the chapel. It's made of dark wood, ancient and ornate. You can hear whispers coming from inside—multiple voices speaking in hushed, anguished tones. The confessional screen is cracked. As you approach, the whispers grow louder, becoming almost a chorus. You notice fresh scratches around the lock.",
     "decisions": [
       {
-        "text": "Listen to the whispers",
+        "text": "Open the confessional and listen inside",
         "consequence": {
-          "text": "You capture EVP recordings.",
+          "text": "The moment you open the door, the whispers cease. Then, a woman's voice—soft but unmistakably present—confesses sins. Murder. Betrayal. Demonic pacts. She confesses your sins too—sins you don't remember committing. As she speaks, your arms and legs feel heavy. You cannot close the confessional. A hand reaches out from the darkness and touches your face.",
           "evidence": "EVP recordings",
-          "sanityChange": -10,
-          "nextLevel": 9
+          "sanityChange": -18,
+          "nextLevel": 6
         }
       },
       {
-        "text": "Break the door",
+        "text": "Pry open the confessional screen",
         "consequence": {
-          "text": "You find a hidden tunnel.",
+          "text": "The screen gives way unexpectedly. Beneath it, carved into the wood, are initials—hundreds of them—each dated. The dates go back centuries. At the bottom, three initials are carved deeper than the rest: yours. With today's date. You carve them. But you're carving them right now, and you have no tool. The scratches bleed.",
+          "sanityChange": -20,
+          "evidence": "ritual evidence",
+          "item": "crucifix",
           "nextLevel": 7
+        }
+      },
+      {
+        "text": "Leave the confessional and move deeper into the mansion",
+        "consequence": {
+          "text": "As you back away from the confessional, the whispers follow you through the walls themselves. They seem almost grateful. You feel a strange gratitude too—as if you've done them a service by listening. It fills you with inexplicable shame.",
+          "sanityChange": -10,
+          "nextLevel": 8
         }
       }
     ]
@@ -120,22 +175,34 @@
   {
     "id": 6,
     "title": "Ritual Room",
-    "description": "A room with a pentagram on the floor. Candles burn low.",
+    "description": "A large pentagram is drawn on the floor in what might be chalk—or something worse. Candles burn at each point, though no one lit them. The walls are inscribed with symbols identical to those in the basement. In the center of the pentagram lies a leather-bound journal, its pages covered in handwriting. A crude altar made of blackened stone stands at one end. The air tastes of copper and iron. You feel a presence here—ancient and aware.",
     "decisions": [
       {
-        "text": "Extinguish the candles",
+        "text": "Read the journal",
         "consequence": {
-          "text": "The room darkens. You find a cursed relic.",
-          "item": "cursed relic",
-          "sanityChange": -25,
+          "text": "Each page details rituals designed to bind a spirit to a house. The final entry is dated today—written in your handwriting, describing your own journey here. Pages continue beyond today. Tomorrow's entry describes your death. Next week's describes your resurrections. As you read, your hand begins to move without your control, writing new entries.",
+          "sanityChange": -30,
+          "evidence": "ritual journal",
           "nextLevel": 10
         }
       },
       {
-        "text": "Leave",
+        "text": "Extinguish the candles at each point of the pentagram",
         "consequence": {
-          "text": "You back away slowly.",
-          "nextLevel": 4
+          "text": "As you extinguish each candle, a sound like a scream echoes through the house. The candles relight themselves. Your body moves against your will, relighting them. When all five burn again, you realize you've been floating three feet above the ground. You land hard. A cursed relic—a stone idol—appears at the center of the pentagram where it wasn't before.",
+          "sanityChange": -25,
+          "item": "cursed relic",
+          "evidence": "paranormal object",
+          "nextLevel": 9
+        }
+      },
+      {
+        "text": "Leave immediately to escape this cursed room",
+        "consequence": {
+          "text": "You run from the room, but the doorway keeps moving. Every exit leads back inside. The walls breathe. The pentagram follows you, always remaining just in your peripheral vision. Finally, you find a real door and stumble out into the Library, gasping. Behind you, the door vanishes.",
+          "sanityChange": -15,
+          "evidence": "paranormal activity",
+          "nextLevel": 8
         }
       }
     ]
@@ -143,20 +210,33 @@
   {
     "id": 7,
     "title": "Hidden Tunnel",
-    "description": "A narrow tunnel leads deeper into the house.",
+    "description": "A narrow tunnel stretches before you into darkness. The walls are old brick, covered in moss and something that glows faintly. Ahead, you hear the sound of water—a river, perhaps. Behind you, the entrance has sealed itself somehow. Your footsteps echo oddly, as if the tunnel is much larger than it appears. You feel the presence of many things that haven't been disturbed for a long time. They're watching your disturbance with great interest.",
     "decisions": [
       {
-        "text": "Follow the tunnel",
+        "text": "Follow the tunnel toward the water sound",
         "consequence": {
-          "text": "You emerge in the library.",
-          "nextLevel": 8
+          "text": "The tunnel opens into an underground chamber. The water is black and still—a reflection of nothing. Bones line the water's edge, arranged with ritual precision. As you approach, you see a ritual symbol carved into the chamber wall, large and deliberate. You recognize it from the basement. This is where something arrived. Something was called here. A bone moves on its own, pointing toward the water.",
+          "evidence": "ritual evidence",
+          "sanityChange": -20,
+          "item": "cursed bone",
+          "nextLevel": 6
         }
       },
       {
-        "text": "Turn back",
+        "text": "Follow the markings on the tunnel wall",
         "consequence": {
-          "text": "You return to the confessional.",
-          "nextLevel": 5
+          "text": "The markings form a map etched in blood—ancient, but still fresh. It shows the entire mansion and something beneath it. A network of tunnels. A deeper place. The map has an X marking what appears to be the center of the house. As you follow it, the tunnel slopes downward more sharply. Each step down feels like stepping through time itself.",
+          "evidence": "map evidence",
+          "nextLevel": 1
+        }
+      },
+      {
+        "text": "Turn back and find another way out",
+        "consequence": {
+          "text": "You retrace your steps. The entrance is sealed with fresh bricks—barely dry mortar still visible. Something is keeping you inside. As you turn to run, a hand emerges from the wall, cold and impossibly long. It doesn't grab you, but the gesture is clear: there is nowhere to escape to. You're exactly where wanted to be.",
+          "sanityChange": -18,
+          "evidence": "paranormal presence",
+          "nextLevel": 3
         }
       }
     ]
@@ -164,21 +244,34 @@
   {
     "id": 8,
     "title": "Library",
-    "description": "Bookshelves tower above you. Some books are chained.",
+    "description": "Bookshelves tower three stories high. Many books have no titles. Some are bound in leather that looks disturbingly like skin. Others are chained to prevent their removal. The library is impossibly vast—larger than the mansion should contain. A rolling ladder reaches toward shelves shrouded in permanent shadow. In the center, a reading desk holds a single book: your own personal diary, from years ago. A note is placed atop it: 'We've been waiting for you.'",
     "decisions": [
       {
-        "text": "Read a forbidden book",
+        "text": "Open and read your diary",
         "consequence": {
-          "text": "The text drives you mad.",
-          "sanityChange": -30,
-          "nextLevel": 9
+          "text": "Your diary contains memories you don't have. Events you never experienced but somehow remember reading about. The later entries describe events happening right now. The final entry, dated last night, describes your discovery of this very diary. How did you write about reading your own diary before you read it? As you close the book, new words appear on the blank final page. In your own handwriting: 'She's waiting in the basement now.'",
+          "sanityChange": -25,
+          "evidence": "paranormal evidence",
+          "nextLevel": 10
         }
       },
       {
-        "text": "Search for clues",
+        "text": "Break a chain and remove a forbidden book",
         "consequence": {
-          "text": "You find a map to the final chamber.",
-          "nextLevel": 10
+          "text": "The chain dissolves at your touch as if it was never real. The book is unmarked, but as you open it, words form on the blank pages. A spell. A summoning. Your eyes compel you to read every word. As you finish, you understand that you've not read a summoning—you've become a summoning. Something is arriving. Or arriving back. The book burns in your hands, leaving no ash.",
+          "sanityChange": -28,
+          "evidence": "forbidden knowledge",
+          "item": "cursed book",
+          "nextLevel": 4
+        }
+      },
+      {
+        "text": "Climb the rolling ladder to the highest shadows",
+        "consequence": {
+          "text": "The ladder climbs higher than should be possible. The ceiling of the library fades above you into something else—stars, or eyes. At the top, in the shadow, you find a book with your name embossed on its spine in gold. It's warm. Inside, detailed accounts of every moment of your life—including this one. Including your death. Which is tomorrow.",
+          "sanityChange": -22,
+          "evidence": "paranormal knowledge",
+          "nextLevel": 9
         }
       }
     ]
@@ -186,22 +279,33 @@
   {
     "id": 9,
     "title": "Bedroom Corridor",
-    "description": "A long corridor with doors to bedrooms. Footsteps echo.",
+    "description": "An endless hallway lined with bedroom doors. Each door is identical—white paint peeling to reveal older wood beneath. You count the doors as you pass: 13, 26, 52... they increase in multiples. The doors are numbered, but the numbers don't follow sequence. Between each door hangs a portrait of a child, eyes always watching. Footsteps echo behind you, matching your pace. When you slow, they slow. When you stop, they stop. You've been hearing them since you entered.",
     "decisions": [
       {
-        "text": "Enter a bedroom",
+        "text": "Open a door at random",
         "consequence": {
-          "text": "You see a figure in the mirror.",
+          "text": "Inside, a bedroom frozen in time. A child sits on a bed, back to you, perfectly still. As you observe, it slowly turns. Its face is porcelain white, features too perfect to be real. When it smiles, its teeth are far too many. You close the door. When you turn back, all the other doors are open. In each one, the same child looks out at you.",
           "evidence": "ghost sighting",
-          "sanityChange": -15,
+          "sanityChange": -26,
           "nextLevel": 10
         }
       },
       {
-        "text": "Run to the end",
+        "text": "Confront the footsteps behind you",
         "consequence": {
-          "text": "You reach the final chamber.",
-          "nextLevel": 10
+          "text": "You spin around. The hallway behind you is empty. But the footsteps continue, now inside your head—a rhythm matching your heartbeat. Your reflection in the window shows someone standing behind you. But when you turn, there's no one. The reflection doesn't stop looking at you.",
+          "sanityChange": -20,
+          "evidence": "paranormal presence",
+          "nextLevel": 8
+        }
+      },
+      {
+        "text": "Run toward the end of the corridor",
+        "consequence": {
+          "text": "You run, but the corridor expands faster than you move. The doors multiply. The portraits multiply. Their eyes follow you. Behind, ahead, around—you're surrounded by watching children who have never been children. Everything smells like old milk and copper. When you finally stop, breathless, you realize you haven't moved at all. You're standing exactly where you started.",
+          "sanityChange": -15,
+          "evidence": "paranormal activity",
+          "nextLevel": 7
         }
       }
     ]
@@ -209,20 +313,33 @@
   {
     "id": 10,
     "title": "Final Chamber",
-    "description": "You reach the heart of the house. The entity awaits.",
+    "description": "The final chamber lies beneath the mansion, deeper than should be possible. The room is circular, with a domed ceiling carved from stone that glows with its own light. In the center, a chair—a throne, perhaps. Behind the throne, a wall of water that hangs suspended without flowing. And in the water, you see her: a woman made of shadows and light, with eyes that have watched this mansion, and every person in it, since before it was built. She is beautiful and terrible. She is called 'The Entity'. She has been waiting for you. She says your name like she's tasted it for centuries.",
     "decisions": [
       {
-        "text": "Confront the entity",
+        "text": "Accept the Entity's offer of power and eternal knowledge",
         "consequence": {
-          "text": "You survived the night!",
-          "nextLevel": 11
+          "text": "You step forward. Her hand reaches through the veil of water and touches your forehead. Knowledge flows into you—infinite, overwhelming, madness-inducing. You see every moment of every life lived in this mansion. You become the mansion. The walls are your skin. The shadows are your thoughts. You are home. But home is alive, and alive is torture. Eternal torture.",
+          "dead": true,
+          "evidence": "entity contact",
+          "sanityChange": -50
         }
       },
       {
-        "text": "Use holy water",
+        "text": "Use the evidence you've collected to banish her",
         "consequence": {
-          "text": "The entity recoils. You escape with evidence.",
-          "nextLevel": 11
+          "text": "You hold up the evidence—the symbols, the recordings, the photographs, the cursed relic. You speak words you don't understand but somehow know. The Entity screams, a sound that breaks the water's surface. She pulls against some invisible bond. The mansion shakes. Slowly, impossibly, her grip on this reality weakens. The water freezes. She is locked away—for now. The house will not forget her. And neither will you. But you are free. The door opens. The morning sun waits outside.",
+          "ending": "SURVIVED",
+          "evidence": "banishment ritual",
+          "sanityChange": -20
+        }
+      },
+      {
+        "text": "Try to escape without confrontation",
+        "consequence": {
+          "text": "You turn to run. The Entity doesn't move. She simply laughs—a sound like wind through empty rooms. The door seals before you reach it. The walls move inward. She whispers into your ear that nowhere inside the mansion is an exit, only deeper rooms, only further descent. The chair appears behind you. It's time to sit now. To wait. To become what she was: the next guardian. The next voice in the whispers. The next Entity watching for new arrivals.",
+          "ending": "POSSESSED",
+          "evidence": "entity merger",
+          "sanityChange": -45
         }
       }
     ]

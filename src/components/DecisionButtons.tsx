@@ -9,14 +9,15 @@ interface Props {
 
 function DecisionButtons({ decisions, onChoice }: Props) {
   return (
-    <div className="mt-4 space-y-2">
+    <div className="mt-4 space-y-3">
+      <div className="text-xs text-gray-500 mb-2 uppercase tracking-wide">What do you do?</div>
       {decisions.map((d, i) => (
         <button
           key={i}
           onClick={() => onChoice(i)}
-          className="block w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded transition-colors"
+          className="horror-button block w-full text-left group"
         >
-          {d.text}
+          <span className="text-red-400 group-hover:text-red-300 transition-colors">[{i + 1}]</span> {d.text}
         </button>
       ))}
     </div>

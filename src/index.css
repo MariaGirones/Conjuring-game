@@ -1,0 +1,167 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Crimson Text', 'Georgia', serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode (default and only mode) */
+body {
+  @apply bg-black text-white;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Crimson Text', serif;
+  font-weight: 600;
+}
+
+/* Psychological horror effects */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { opacity: 1; }
+  25% { opacity: 0.8; }
+  50% { opacity: 0.6; }
+  75% { opacity: 0.8; }
+}
+
+@keyframes whisper {
+  0% { filter: blur(0); opacity: 0; transform: translateX(-10px); }
+  50% { opacity: 0.5; }
+  100% { filter: blur(0); opacity: 0; transform: translateX(10px); }
+}
+
+.glitch {
+  animation: glitch 0.3s infinite;
+}
+
+.flicker {
+  animation: flicker 0.15s infinite;
+}
+
+.heartbeat {
+  animation: heartbeat 0.8s ease-in-out infinite;
+}
+
+.whisper {
+  animation: whisper 2s ease-in-out infinite;
+  font-style: italic;
+  opacity: 0.6;
+  font-size: 0.9em;
+}
+
+/* Horror button styles */
+.horror-button {
+  @apply relative px-4 py-3 bg-red-900 text-white rounded border border-red-700 transition-all duration-300;
+  font-family: 'Crimson Text', serif;
+}
+
+.horror-button:hover {
+  @apply bg-red-800 border-red-600 shadow-[0_0_10px_rgba(127,29,29,0.8)];
+}
+
+.horror-button:active {
+  @apply scale-95;
+}
+
+.horror-button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Story text styling */
+.story-text {
+  @apply leading-relaxed text-lg;
+  font-family: 'Crimson Text', serif;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Sanity effect - low sanity distortion */
+.sanity-low {
+  filter: blur(0.5px) brightness(0.95);
+  animation: flicker 0.1s infinite;
+}
+
+.sanity-critical {
+  filter: blur(1px) brightness(0.88);
+  animation: glitch 0.2s infinite;
+}
+
+/* Panel styling */
+.game-panel {
+  @apply bg-gray-900 border border-gray-700 rounded p-4;
+  background: radial-gradient(circle at top left, rgba(31,41,55,0.8), rgba(0,0,0,0.95));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .story-text {
+    @apply text-base;
+  }
+
+  .horror-button {
+    @apply py-2 px-3 text-sm;
+  }
+}
+
+/* Loading animation */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(239, 68, 68, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.8); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Dark overlay for intense moments */
+.dark-overlay {
+  @apply fixed inset-0 bg-black pointer-events-none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dark-overlay.active {
+  opacity: 0.3;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded hover:bg-gray-500;
+}
