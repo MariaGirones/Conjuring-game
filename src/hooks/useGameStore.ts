@@ -52,6 +52,12 @@ const useGameStore = create<GameState>()(
     }),
     {
       name: 'conjuring-game-storage',
+      partialize: (state) => ({
+        currentLevel: state.currentLevel,
+        inventory: state.inventory,
+        evidence: state.evidence,
+        sanity: state.sanity,
+      }),
     }
   )
 )
