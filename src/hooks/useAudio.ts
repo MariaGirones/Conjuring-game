@@ -287,8 +287,32 @@ class AudioManager {
         break
       }
 
+      case 'click': {
+        // Ominous creak: short highpass noise burst + falling pitch
+        const buf = this.createNoiseBuffer(ctx)
+        const src = ctx.createBufferSource()
+        src.buffer = buf
+
+        const hp = ctx.createBiquadFilter()
+        hp.type = 'bandpass'
+        hp.frequency.setValueAtTime(800, ctx.currentTime)
+        hp.Q.setValueAtTime(4, ctx.currentTime)
+
+        const env = ctx.createGain()
+        env.gain.setValueAtTime(effVol * 0.18, ctx.currentTime)
+        env.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.18)
+
+        src.connect(hp)
+        hp.connect(env)
+        env.connect(ctx.destination)
+
+        src.start()
+        src.stop(ctx.currentTime + 0.2)
+        break
+      }
+
       default: {
-        // Generic click/notify tone — soft sine blip
+        // Soft sine blip fallback
         const osc = ctx.createOscillator()
         osc.type = 'sine'
         osc.frequency.setValueAtTime(330, ctx.currentTime)

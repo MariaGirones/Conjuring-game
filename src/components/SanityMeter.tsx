@@ -16,7 +16,7 @@ function SanityMeter() {
     if (sanity > 50) return 'from-yellow-600 to-yellow-500'
     if (sanity > 30) return 'from-orange-600 to-orange-500'
     if (sanity > 10) return 'from-red-700 to-red-600'
-    return 'from-red-900 to-red-700 animate-heartbeat'
+    return 'from-red-900 to-red-700 heartbeat'
   }
 
   const getValueColor = () => {

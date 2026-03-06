@@ -7,60 +7,74 @@ function StartScreen() {
   const { setPlayerName } = useGameStore()
 
   const handleStart = () => {
-    if (inputName.trim().length > 0) {
-      setPlayerName(inputName)
-    }
+    if (inputName.trim().length > 0) setPlayerName(inputName)
   }
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && inputName.trim().length > 0) {
-      handleStart()
-    }
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') handleStart()
   }
 
   return (
-    <div className="flex items-center justify-center h-screen overflow-hidden relative
-      bg-stone-100 text-stone-900 dark:bg-black dark:text-white">
+    <div className="flex items-center justify-center h-screen overflow-hidden relative"
+      style={{ backgroundColor: 'var(--color-bg-primary)', color: 'var(--color-text-primary)' }}>
 
-      {/* Theme toggle — top-right corner */}
+      {/* Theme toggle — top-right */}
       <div className="absolute top-4 right-4 z-20">
         <ThemeToggle />
       </div>
 
-      {/* Atmospheric background gradient */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-red-900/20 to-transparent dark:to-black"></div>
-      </div>
+      {/* Atmospheric vignette */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(80,0,0,0.18) 100%)' }} />
 
-      <div className="relative z-10 text-center max-w-md mx-auto px-4">
-        <h1 className="text-5xl md:text-6xl font-serif font-bold mb-2 flicker
-          text-stone-900 dark:text-white">
+      <div className="relative z-10 text-center max-w-sm mx-auto px-6">
+
+        {/* Case file label */}
+        <p className="text-xs uppercase tracking-widest font-mono mb-4"
+          style={{ color: 'var(--color-text-muted)' }}>
+          Warren Case File #19 — Rhode Island, 1971
+        </p>
+
+        {/* Main title — Cinzel Decorative via .font-display */}
+        <h1 className="font-display text-4xl md:text-5xl mb-1 flicker"
+          style={{ color: 'var(--color-text-primary)' }}>
           THE CONJURING
         </h1>
-        <h2 className="text-xl mb-8 font-serif italic text-red-700 dark:text-red-400">
-          A Dark Night Awaits
-        </h2>
 
-        <div className="mb-8 text-sm leading-relaxed text-stone-700 dark:text-gray-300">
-          <p className="mb-4">
-            You stand before an abandoned mansion. A place where the boundaries between worlds grow thin.
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <span className="block h-px w-12" style={{ backgroundColor: 'var(--color-border-accent)' }} />
+          <p className="text-base italic" style={{ color: 'var(--color-text-secondary)' }}>
+            A Paranormal Investigation
+          </p>
+          <span className="block h-px w-12" style={{ backgroundColor: 'var(--color-border-accent)' }} />
+        </div>
+
+        <div className="mb-8 text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="mb-3">
+            The Perron farmhouse, Rhode Island. Ed and Lorraine Warren investigated
+            here in 1971. The entity they encountered was never fully expelled.
           </p>
           <p>
-            To survive this night, you must face what lurks within. Enter your name to begin your journey into darkness.
+            The house has been waiting since then. You are the next investigator
+            to walk through that door. Enter your name to begin.
           </p>
         </div>
 
-        <div className="mb-6">
+        <div className="mb-5">
           <input
             type="text"
             value={inputName}
             onChange={(e) => setInputName(e.target.value)}
-            onKeyPress={handleKeyPress}
-            placeholder="Enter your name..."
+            onKeyDown={handleKeyDown}
+            placeholder="Investigator's name..."
             maxLength={30}
-            className="w-full px-4 py-3 rounded border-2 font-serif text-center transition-colors focus:outline-none
-              bg-stone-200 border-red-800 text-stone-900 placeholder-stone-400 focus:border-red-600
-              dark:bg-gray-900 dark:border-red-900 dark:text-white dark:placeholder-gray-600 dark:focus:border-red-600"
+            className="w-full px-4 py-3 rounded-sm border-2 font-serif text-center
+              transition-colors focus:outline-none text-base"
+            style={{
+              backgroundColor: 'var(--color-bg-secondary)',
+              borderColor: 'var(--color-border-accent)',
+              color: 'var(--color-text-primary)',
+            }}
             autoFocus
           />
         </div>
@@ -68,15 +82,16 @@ function StartScreen() {
         <button
           onClick={handleStart}
           disabled={inputName.trim().length === 0}
-          className="w-full horror-button text-lg font-serif"
+          className="w-full horror-button text-lg"
         >
-          Enter the Mansion
+          Enter the Farmhouse
         </button>
 
-        <div className="mt-12 text-xs text-stone-500 dark:text-gray-500">
-          <p>This game contains psychological horror themes</p>
-          <p className="mt-2">Your sanity is fragile. Use caution.</p>
-        </div>
+        <p className="mt-10 text-xs" style={{ color: 'var(--color-text-muted)' }}>
+          Based on the documented Warren investigations.
+          <br />
+          Contains themes of religious terror and psychological horror.
+        </p>
       </div>
     </div>
   )

@@ -1,33 +1,33 @@
 [
   {
     "id": 1,
-    "title": "Entrance Hall",
-    "description": "You stand before the Conjuring House—an imposing Victorian mansion shrouded in perpetual gloom. The brass door knocker catches the fading light. Your phone signal dies the moment you step through the threshold. The entrance hall stretches before you, adorned with faded portraits whose eyes seem to track your movement. The air is thick and cold. You hear the subtle sound of a music box playing somewhere deep within the house.",
+    "title": "The Perron Farmhouse — Threshold",
+    "description": "Rhode Island, 1971. You have come to investigate the farmhouse that broke Ed and Lorraine Warren.\n\nThe house exhales cold air through its open door, though no window is broken, no vent is open. The Warren files you carry describe Bathsheba Sherman — a woman hanged from the oak tree behind this property in 1863 after reportedly sacrificing her infant to the Devil. The land was cursed before the foundation was ever laid.\n\nYour flashlight flickers once, then steadies. The entrance hall smells of burnt tallow and something older — iron, copper, rot. Somewhere deep in the house, a music box begins to play. Lorraine Warren herself fled from this exact sound.\n\nYou hear a child whisper '{playerName}' from upstairs.",
     "decisions": [
       {
-        "text": "Head directly to the Chapel (left corridor)",
+        "text": "Enter the chapel corridor — Ed Warren left notes about 'the black heart of the house' here",
         "consequence": {
-          "text": "Your footsteps echo across marble tiles. The portraits above seem to lean inward as you pass. An old chandelier sways gently despite the absence of wind. You smell incense—old and burnt.",
-          "sanityChange": -3,
+          "text": "The corridor breathes. You are not imagining it — the walls contract and expand in slow, rhythmic pulses. The portraits lining the hall are all of Bathsheba: different decades, different frames, but always the same cold black eyes. One has been slashed by fingernails from the inside of the canvas.\n\nAt the end of the corridor, a crucifix hangs upside down. Beneath it, someone has drawn a goat's head in what the Warrens' files confirm is not paint.\n\nThe music box stops. The silence is worse.",
+          "sanityChange": -5,
           "item": "lighter",
           "nextLevel": 2
         }
       },
       {
-        "text": "Descend to the Basement (the ominous stairs)",
+        "text": "Descend to the root cellar — Roger Perron described 'something living down there'",
         "consequence": {
-          "text": "The basement stairs creak under your weight. With each step down, the temperature drops. You hear distant, indecipherable whispering—and something that might be screaming, or wind. The air tastes like copper and dust.",
-          "sanityChange": -8,
-          "evidence": "cold spot",
+          "text": "Twelve steps. With each one, a degree colder. The root cellar is exactly as Carolyn Perron described in her testimony: the stone altar in the northeast corner, the iron shackles bolted to the wall, the unmistakable smell of old blood in the earth.\n\nBut the Warrens' file said the altar was destroyed in 1975. It stands here whole, unmarked, as if it was built yesterday. As if it has been waiting.\n\nSomething carved into the stone reads: SHE DID NOT LEAVE. SHE NEVER LEAVES.",
+          "sanityChange": -10,
+          "evidence": "Perron cellar altar — active and intact",
           "nextLevel": 3
         },
         "minSanity": 70
       },
       {
-        "text": "Explore the Library (right corridor)",
+        "text": "Investigate the study — Lorraine's notes mention 'documents that should have been burned'",
         "consequence": {
-          "text": "Ancient books line the walls. Many have no titles. A few are chained to their shelves with iron chains. As you walk, you notice every single book opens slightly as if to breathe. One falls at your feet unbidden.",
-          "sanityChange": -5,
+          "text": "The study is untouched since 1973. Dust thick enough to hold shape. A single candle burns on the desk — impossible, since you are the first person through that door. On the desk, a leather folder stamped WARREN CASE FILE #19 — CLASSIFIED.\n\nYou open it. The first photograph is of this room. Taken now. But dated 1973. You are standing in the photograph with your back to the camera.\n\nThe candle flame bends toward you, away from the draft.",
+          "sanityChange": -8,
           "item": "flashlight",
           "nextLevel": 8
         }
@@ -36,32 +36,33 @@
   },
   {
     "id": 2,
-    "title": "Chapel",
-    "description": "The chapel is illuminated by hundreds of flickering candles, yet the light seems to make shadows deeper. A distorted cross hangs above the altar—tilted at an impossible angle. The walls are covered in scratches. You notice something written in ash on the floor: 'SHE WATCHES'. A figure stands at the far end, but when you blink, it's gone. Was it ever there?",
+    "title": "The Desecrated Chapel",
+    "description": "The chapel was consecrated in 1842. Bathsheba Sherman unconsecrated it six years later.\n\nAn inverted cross dominates the far wall — not hung upside down, but grown that way, the wood warped by something internal. Each pew faces inward instead of the altar, as though the congregation has been forced to kneel facing each other for decades. Seven black candles burn in a deliberate pattern that Ed Warren identified in his notes as a summoning array.\n\nOn the altar: a baptismal font filled with black water. The reflection inside shows a room this chapel does not contain.\n\nThe Warrens documented that Bathsheba used this place to conduct blood rites on the second Saturday of every month. Today is a Saturday.",
     "decisions": [
       {
-        "text": "Approach the altar and pray",
+        "text": "Search beneath the pews — Lorraine recorded a vision of 'something hidden here in God's name'",
         "consequence": {
-          "text": "As you kneel, the candles extinguish one by one, from back to front, moving toward you methodically. A voice—neither male nor female—whispers your name. You feel a hand on your shoulder. When you turn, there's nothing. But the feeling of being touched remains.",
-          "sanityChange": -12,
-          "evidence": "paranormal presence",
+          "text": "Under the third pew from the front, wrapped in a cloth of undyed linen and sealed with a wax cross, you find what the Warrens left behind.\n\nA hand-carved cross of rowan wood, blessed by Father Achampong at St. Michael's in 1973 during the Warren investigation. Lorraine wrote in her diary: 'If we do not survive this, whoever comes next will need this more than we did.'\n\nThe moment you close your fingers around it, the seven candles gutter — not out, but dim, as though something has noticed a threat.",
+          "item": "anti-demon cross",
+          "evidence": "Warren-blessed rowan cross — left for the next investigator",
           "nextLevel": 4
         }
       },
       {
-        "text": "Search the floor for the key to the Confessional",
+        "text": "Approach the inverted cross and pray the Lord's Prayer",
         "consequence": {
-          "text": "Under the scratches on the floor, you find a tarnished brass key. The moment you touch it, you hear a voice begging for forgiveness from inside the walls. The key pulses with warmth—then ice cold.",
-          "item": "confessional key",
+          "text": "You begin. 'Our Father, who art in—'\n\nThe cross bleeds from the wood. Not runs — bleeds, rhythmically, as a wound bleeds. The baptismal font boils. A voice beneath the floorboards answers every phrase of the prayer in an inversion: a language that is the Lord's Prayer spoken in reverse, in a voice that is neither male nor female, neither living nor entirely dead.\n\nWhen you finish, every candle snuffs at once. In the darkness, something cold and deliberate presses the shape of a hand against your sternum from inside your ribcage. It squeezes, once, to show you it can.",
+          "sanityChange": -18,
+          "evidence": "Demonic response to sacred prayer — Chapel, Saturday rite",
           "nextLevel": 5
         }
       },
       {
-        "text": "Examine the scratches on the walls",
+        "text": "Examine the summoning array — document it as Ed Warren did in 1971",
         "consequence": {
-          "text": "The scratches form patterns—almost like writing, but not quite. As you trace them with your fingers, you hear a child's laughter echoing through the chapel. It comes from behind the altar. When you look, you find a doll dressed in priestly robes, its button eyes staring directly at you.",
-          "sanityChange": -15,
-          "evidence": "ritual markings",
+          "text": "Seven candles. Seven animals represented in ash between them — goat, raven, cat, serpent, wolf, spider, and one you cannot identify. The array forms a shape Ed Warren annotated as a 'demonic aperture' — a literal door held open through sustained ritual.\n\nAs you finish sketching it, the aperture responds. The air in the center darkens. A smell like hot copper and burned hair. You see a hand reaching from the darkness between the candles, fingernails black and too long.\n\nYou step back. The hand stops. It waits.",
+          "sanityChange": -20,
+          "evidence": "Active summoning array — seven-point demonic aperture",
           "nextLevel": 6
         }
       }
@@ -69,71 +70,67 @@
   },
   {
     "id": 3,
-    "title": "Basement",
-    "description": "The basement is a labyrinth of stone. Chains hang from the ceiling, some still wearing remnants of old cloth and bone. Water drips from the ceiling, but it's too cold to be natural water. The walls are covered in older scratches—and symbols. Some glow faintly with a sickly phosphorescence. You notice a door at the far end, and another ascending back upstairs. A heavy smell permeates everything: earth, decay, and something else... something sacred.",
+    "title": "The Root Cellar",
+    "description": "Three investigators entered this cellar before Ed Warren. None stayed more than four minutes. Warren himself lasted eleven minutes on his first descent and said afterward: 'There are places on earth that have been given to something that isn't God. This cellar is one of them.'\n\nThe shackles on the north wall are worn smooth — worn smooth from the inside. The altar stone is scarred with Latin phrases carved in haste, each one a different handwriting, a different era. The most recent set of carvings is dated 1975. The Warrens' last visit. But below it, in fresh cuts that still hold dust: an inscription dated three days ago.\n\nYou are not the first to come here recently.",
     "decisions": [
       {
-        "text": "Examine the glowing symbols closely",
+        "text": "Read the inscriptions — all of them, from oldest to newest",
         "consequence": {
-          "text": "As your eyes focus on the symbols, they rearrange themselves. Your vision blurs. The symbols seem to spell out warnings in languages you don't speak but somehow understand: 'GET OUT', 'SHE IS HERE', 'STOP LOOKING'. Blood droplets form the letters. Then they fade.",
-          "evidence": "ritual symbols",
-          "sanityChange": -20,
-          "item": "voice recorder",
+          "text": "The oldest inscription is a prayer of binding. The next is a desperate plea. The third is a warning: DO NOT SPEAK HER NAME. The fourth, in Latin: 'She feeds on witness.' The fifth is in a language you don't know but your body does — your hands begin to shake. The sixth is from the Warrens: case notes, a binding prayer, the date 1975.\n\nThe seventh — dated three days ago — is in your own handwriting. It begins with your name: '{playerName}.' A confession of every sin you have committed, in precise detail, ending with: 'I should not have come here.'\n\nYour hands are moving. You are writing the eighth inscription now.",
+          "sanityChange": -25,
+          "evidence": "Altar inscriptions — eight generations of investigators",
           "nextLevel": 7
         }
       },
       {
-        "text": "Follow the chains to their origin",
+        "text": "Search the old medicine cabinet on the east wall",
         "consequence": {
-          "text": "The chains lead to a stone chair embedded in the ground. As you approach, you hear a woman's voice singing a lullaby—hauntingly beautiful and heartbreaking. On the chair, you find a cameo locket. Inside is a photograph that becomes clearer the longer you stare at it. It shows the inside of the mansion... but wrong. Distorted.",
-          "sanityChange": -10,
-          "item": "locket",
-          "evidence": "ghost sighting",
-          "nextLevel": 2
+          "text": "It belonged to the investigators who came in 1975. Inside: a half-used bottle of prescription sedatives — Valium, still sealed in their original blister pack — and a handwritten note taped to the label:\n\n'When the walls speak and the floor breathes, these will quiet the noise enough to think clearly. Take no more than two. God bless you. — L.W.'\n\nLorraine Warren's initials. She left these for whoever came after her. She knew someone would.",
+          "item": "anxiety pills",
+          "nextLevel": 1
         }
       },
       {
-        "text": "Try the old door at the far end",
+        "text": "Approach the shackled wall and examine what's behind it",
         "consequence": {
-          "text": "The door resists at first, but it opens. A passage leads into complete darkness. You hear breathing—close, and deliberate. Not your own. You turn back and slam the door, but you hear it open again behind you as you ascend the stairs.",
-          "sanityChange": -8,
-          "evidence": "paranormal presence",
-          "nextLevel": 1
+          "text": "The shackles are bolted into the stone with iron rings. Between them, scratched deep over decades: names. Forty-seven names of people the Warrens could never account for — visitors who came to this property and were never reported missing because no one remembered them visiting.\n\nAmong the forty-seven, three names are scratched differently. More recently. In a childlike hand.\n\nOne of the three names is '{playerName}.'\n\nThe shackles rattle once — measured, deliberate — as though a greeting.",
+          "sanityChange": -22,
+          "evidence": "The wall of the disappeared — 47 names, including yours",
+          "nextLevel": 2
         }
       }
     ]
   },
   {
     "id": 4,
-    "title": "Attic",
-    "description": "The attic is vast, filled with furniture under white sheets. To you, they look like motionless figures. A rocking chair in the corner moves on its own, creaking rhythmically. Cobwebs thick as gauze hang from every corner. Dust particles float in strange patterns—almost like they're being directed. You notice old trunks, a vanity with a cracked mirror, and in the corner, a child's bed with stains you don't want to examine closely.",
+    "title": "The Children's Ward",
+    "description": "The Perron children slept in these rooms.\n\nAndrea, Nancy, Christine, Cindy, and April — five daughters who reported waking to the same sight every night: a woman standing in the corner, smelling of dead flowers and rot, her feet hovering two inches above the floor. April, the youngest, called her 'Mama.' The Warrens never corrected her. They weren't certain she was wrong.\n\nThe rooms are full of toys that belong to no child who ever lived here. A porcelain doll sits in the center of the largest room. It was not here when you entered the corridor. It arrived while you were walking.\n\nIts head is slightly turned toward you.",
     "decisions": [
       {
-        "text": "Open the trunks and search for items",
+        "text": "Examine the porcelain doll — the Warrens documented a similar object in the Hodgson case",
         "consequence": {
-          "text": "The first trunk contains old photographs—faces you feel you've seen before. The second contains clothes from another era. The third is empty except for a note in child's handwriting: 'Help me. She won't let me leave. My hands hurt from writing.' Your hands hurt in the same places.",
-          "item": "camera",
-          "sanityChange": -18,
-          "evidence": "personal item",
+          "text": "The doll's eyes are glass but they follow. The Warrens documented this exact phenomenon with Annabelle — a Raggedy Ann doll that a medium confirmed was inhabited by a demonic spirit masquerading as a dead child. This one has the same quality of patient, watching intelligence.\n\nYou pick it up. The temperature in your hand drops to near-zero. A child's voice from inside the doll: 'You smell like the others. You smell like food.'\n\nYou set it down. Its head was facing left when you picked it up. Now it faces right. You did not turn it.",
+          "sanityChange": -20,
+          "evidence": "Inhabited doll — demonic intelligence confirmed via temperature and movement",
           "nextLevel": 9
         }
       },
       {
-        "text": "Sit in the rocking chair",
+        "text": "Search the wardrobe — Carolyn Perron described a 'hollow sound' from inside",
         "consequence": {
-          "text": "The moment you sit, the chair wraps its motion around you as if of its own volition. You cannot move. In the cracked mirror opposite, you see yourself aged fifty years, eyes filled with ancient suffering. Then you see something else behind you. A small figure in white. When you blink, you're standing again. The chair is still rocking. Alone.",
-          "evidence": "ghost sighting",
-          "sanityChange": -25,
-          "item": "holy water",
-          "nextLevel": 2
+          "text": "The wardrobe is full of children's clothes in sizes that span decades. At the back, behind the hanging garments, is a small door. Behind the small door is a room that should not exist — a space too wide for the house's exterior to contain.\n\nThe room holds nothing but a rocking chair and a single photograph nailed to the wall. The photograph is of Ed and Lorraine Warren standing in this exact room. They are holding hands. Their eyes are closed. They are praying. Behind them in the photograph, just visible in shadow, is a shape that looks like a woman standing with her arms at unnatural angles.\n\nOn the chair: a child's journal. The last entry reads: 'She says we will all be here forever. I don't want to be here forever. Please come get us.'",
+          "sanityChange": -15,
+          "item": "camera",
+          "evidence": "Hidden room — Warren photograph, child journal recovered",
+          "nextLevel": 6
         }
       },
       {
-        "text": "Examine the vanity mirror",
+        "text": "Open the window and attempt to signal outside — you need confirmation you are still connected to the real world",
         "consequence": {
-          "text": "The mirror is cracked in a spiderweb pattern that resembles a face screaming. As you lean close, your reflection lasts a moment too long to move. You see your own mouth form words you're not speaking. The reflection pulls at the mirror from inside.",
-          "sanityChange": -22,
-          "evidence": "paranormal activity",
+          "text": "The window opens. The outside is wrong.\n\nThe oak tree in the yard — the one Bathsheba was hanged from — is the only thing moving in a landscape otherwise frozen as a photograph. Its branches move in a wind you cannot feel. Its shape in the dark is unmistakably the shape of a person with arms raised.\n\nSomething scratches the outside of the window glass from below, as though climbing. The scratch marks are fingernails: deliberate, patient, climbing upward. They reach the sill. They stop.\n\nYou close the window. The scratching continues from inside.",
+          "sanityChange": -18,
+          "evidence": "External paranormal activity — Bathsheba's oak, active scratching",
           "nextLevel": 5
         }
       }
@@ -141,34 +138,32 @@
   },
   {
     "id": 5,
-    "title": "Confessional Room",
-    "description": "The confessional stands alone in a small side room off the chapel. It's made of dark wood, ancient and ornate. You can hear whispers coming from inside—multiple voices speaking in hushed, anguished tones. The confessional screen is cracked. As you approach, the whispers grow louder, becoming almost a chorus. You notice fresh scratches around the lock.",
+    "title": "The Confessional Alcove",
+    "description": "The confessional was installed in 1855 by a priest named Father Dumont who moved into the house after the Shermans and lasted four months before being found catatonic on the front lawn. His written account, recovered by the Warrens, describes hearing confessions from something that was not human — confessions of acts committed before humanity existed, sins without names in any living language.\n\nThe confessional screen is carved with faces. They are not the faces of saints.\n\nYou hear someone inside. Breathing with a rhythm that does not match any living creature's need for oxygen. Slow. Deliberate. Patient beyond measure.",
     "decisions": [
       {
-        "text": "Open the confessional and listen inside",
+        "text": "Sit in the confessor's seat and listen — as the Warrens' demonologist instructed, document everything",
         "consequence": {
-          "text": "The moment you open the door, the whispers cease. Then, a woman's voice—soft but unmistakably present—confesses sins. Murder. Betrayal. Demonic pacts. She confesses your sins too—sins you don't remember committing. As she speaks, your arms and legs feel heavy. You cannot close the confessional. A hand reaches out from the darkness and touches your face.",
-          "evidence": "EVP recordings",
-          "sanityChange": -18,
+          "text": "The voice begins without preamble. In Latin first, then English, then in a language older than either. It confesses the murders. The century of manipulations. The seven children taken. The three investigators driven to permanent madness. Carolyn Perron's possession, described from the inside — what it felt like to inhabit a living woman, to move her hands against her will, to speak with her voice while she screamed in silence behind her own eyes.\n\nThen: 'Now I will confess yours.'\n\nIt knows things only you know. Events no one witnessed. It describes them in precise, affectless detail. It is not guessing. It has always known.\n\nYou cannot stand. Your legs will not respond. You are going to be here for a very long time.",
+          "sanityChange": -22,
+          "evidence": "Confession recording — demonic autobiography, personal surveillance confirmed",
           "nextLevel": 6
-        },
-        "requiredItem": "confessional key"
+        }
       },
       {
-        "text": "Pry open the confessional screen",
+        "text": "Speak through the screen — demand to know what Bathsheba wants",
         "consequence": {
-          "text": "The screen gives way unexpectedly. Beneath it, carved into the wood, are initials—hundreds of them—each dated. The dates go back centuries. At the bottom, three initials are carved deeper than the rest: yours. With today's date. You carve them. But you're carving them right now, and you have no tool. The scratches bleed.",
-          "sanityChange": -20,
-          "evidence": "ritual evidence",
-          "item": "crucifix",
+          "text": "A long silence. Then, quietly: 'I want what was taken from me.'\n\n'What was taken?'\n\n'My name spoken with fear. My power acknowledged. My house respected.' A pause. 'And one more soul to join the others in the walls.'\n\nYou ask whose soul. The silence that follows is not empty — it is full of something that knows the answer and is choosing not to give it as a gift.\n\nThen: 'You already know.'\n\nThe screen between you fractures down the center. On the other side, where a human figure should be, there is nothing. Just darkness in the exact shape of a person.",
+          "sanityChange": -15,
+          "evidence": "Direct communication with Bathsheba — nature and intent documented",
+          "item": "voice recorder",
           "nextLevel": 7
-        },
-        "minSanity": 50
+        }
       },
       {
-        "text": "Leave the confessional and move deeper into the mansion",
+        "text": "Leave immediately — the Warrens' protocol states you must not engage the entity alone",
         "consequence": {
-          "text": "As you back away from the confessional, the whispers follow you through the walls themselves. They seem almost grateful. You feel a strange gratitude too—as if you've done them a service by listening. It fills you with inexplicable shame.",
+          "text": "You back away. The confessional does not want you to leave — you feel this as a physical pressure against your chest, a hand pushing inward from nothing. But you push through it.\n\nAs you reach the door, the voice from the confessional calls after you. Not threatening. Almost sorrowful:\n\n'You will come back. They always come back to confess. You have so many things you haven't told anyone.' \n\nThe door seals the sound behind you. In the silence of the corridor, you realize you cannot remember the last twenty minutes. The recording in your pocket, which you did not knowingly start, shows twenty-two minutes of audio.",
           "sanityChange": -10,
           "nextLevel": 8
         }
@@ -177,34 +172,34 @@
   },
   {
     "id": 6,
-    "title": "Ritual Room",
-    "description": "A large pentagram is drawn on the floor in what might be chalk—or something worse. Candles burn at each point, though no one lit them. The walls are inscribed with symbols identical to those in the basement. In the center of the pentagram lies a leather-bound journal, its pages covered in handwriting. A crude altar made of blackened stone stands at one end. The air tastes of copper and iron. You feel a presence here—ancient and aware.",
+    "title": "The Séance Room",
+    "description": "The Warrens conducted their séance here on November 1st, 1974. The session lasted eleven minutes. The recordings of those eleven minutes are sealed in the Vatican Secret Archives at Lorraine Warren's personal request. She said only: 'No one should hear what came through that night.'\n\nThe round table still bears the scorch marks from the candles. The mirror on the far wall is covered with a black cloth — covered by Warren, who refused to remove it, who said what was in the mirror was no longer just a reflection.\n\nSomething about this room makes your body unwilling to cross the threshold. Not fear — your body knows something your mind does not yet. It is trying to protect you.",
     "decisions": [
       {
-        "text": "Read the journal",
+        "text": "Sit at the séance table and attempt contact — document everything the Warrens could not",
         "consequence": {
-          "text": "Each page details rituals designed to bind a spirit to a house. The final entry is dated today—written in your handwriting, describing your own journey here. Pages continue beyond today. Tomorrow's entry describes your death. Next week's describes your resurrections. As you read, your hand begins to move without your control, writing new entries.",
-          "sanityChange": -30,
-          "evidence": "ritual journal",
+          "text": "You are not alone at the table. You understand this the moment you sit — the chair across from you has weight in it that light cannot account for. The air is occupied.\n\nA voice rises through the table itself, through the wood: 'Say my name.'\n\nYou know you should not. But your mouth is already opening. The name tastes like copper and old perfume.\n\nThe scorch marks on the table rearrange. They spell something in a language you can read — a binding contract, your signature already at the bottom in a handwriting that is yours but from a hand you have never used.\n\nYou signed this before you were born.",
+          "sanityChange": -28,
+          "evidence": "Séance contact — pre-existing contract recovered, demonic signature confirmed",
+          "item": "locket",
           "nextLevel": 10
         }
       },
       {
-        "text": "Extinguish the candles at each point of the pentagram",
+        "text": "Remove the cloth from the mirror — what the Warrens hid must be documented",
         "consequence": {
-          "text": "As you extinguish each candle, a sound like a scream echoes through the house. The candles relight themselves. Your body moves against your will, relighting them. When all five burn again, you realize you've been floating three feet above the ground. You land hard. A cursed relic—a stone idol—appears at the center of the pentagram where it wasn't before.",
-          "sanityChange": -25,
-          "item": "cursed relic",
-          "evidence": "paranormal object",
+          "text": "The cloth falls. The mirror does not reflect the room.\n\nIt shows a corridor you have not walked yet. At the end of the corridor is a door. Behind the door is a brightness that hurts to look at directly — not because it is holy, but because it is the opposite of holy made visible.\n\nIn the mirror's corridor, moving toward you from the far end, is a figure. A woman. Her feet do not touch the floor. Her eyes have been replaced with something black and liquid. She moves slowly. She has all the time she needs.\n\nAs she reaches the mirror's surface from the inside, she places her palms flat against the glass. The mirror is warm. The glass bulges outward.",
+          "sanityChange": -30,
+          "evidence": "Warren's mirror — active portal confirmed, entity visible",
           "nextLevel": 9
         }
       },
       {
-        "text": "Leave immediately to escape this cursed room",
+        "text": "Recite the Lord's Prayer and demand the room be cleared — the Warrens always opened with this",
         "consequence": {
-          "text": "You run from the room, but the doorway keeps moving. Every exit leads back inside. The walls breathe. The pentagram follows you, always remaining just in your peripheral vision. Finally, you find a real door and stumble out into the Library, gasping. Behind you, the door vanishes.",
-          "sanityChange": -15,
-          "evidence": "paranormal activity",
+          "text": "The prayer lands in the room like a stone in still water. Ripples. Something recoils — not destroyed, not banished, but pushed back, hissing with a sound like steam under pressure.\n\nThe candle stubs on the séance table light themselves in response: not warmly, not in worship, but in defiance. As though announcing: still here. Still watching. Not afraid of your prayer, only inconvenienced.\n\nBut in that moment of inconvenience, you feel the room breathe clean air for the first time. Just once. Then the pressure returns. It is patient.",
+          "sanityChange": -12,
+          "evidence": "Demonic response to exorcism prayer — entity confirmed, partially bounded",
           "nextLevel": 8
         }
       }
@@ -212,33 +207,33 @@
   },
   {
     "id": 7,
-    "title": "Hidden Tunnel",
-    "description": "A narrow tunnel stretches before you into darkness. The walls are old brick, covered in moss and something that glows faintly. Ahead, you hear the sound of water—a river, perhaps. Behind you, the entrance has sealed itself somehow. Your footsteps echo oddly, as if the tunnel is much larger than it appears. You feel the presence of many things that haven't been disturbed for a long time. They're watching your disturbance with great interest.",
+    "title": "The Passage Below",
+    "description": "Ed Warren documented the passage in his private journal but never published the information. His note reads: 'The passage beneath the north foundation does not appear on any building record. It was not built. It arrived. The soil around it has been disturbed continuously for at least three centuries.'\n\nThe passage is narrow enough that you must turn sideways in places. The stone walls are wet — not from groundwater, from something warmer. The passage slopes downward at an angle that the house's foundation cannot account for. It is deeper than the building above it should allow.\n\nWhere the light cannot reach, you hear movement. Not random. Purposeful.",
     "decisions": [
       {
-        "text": "Follow the tunnel toward the water sound",
+        "text": "Follow the passage to its end — the Warrens never did, it may hold the key to the entity's origin",
         "consequence": {
-          "text": "The tunnel opens into an underground chamber. The water is black and still—a reflection of nothing. Bones line the water's edge, arranged with ritual precision. As you approach, you see a ritual symbol carved into the chamber wall, large and deliberate. You recognize it from the basement. This is where something arrived. Something was called here. A bone moves on its own, pointing toward the water.",
-          "evidence": "ritual evidence",
-          "sanityChange": -20,
+          "text": "The passage ends in a chamber that predates the house by centuries. The walls are natural stone, but they are carved — every surface covered in petroglyphs and symbols that archaeologists would date to the 17th century. They depict a ritual. The same ritual, repeated hundreds of times with slight variations, each version showing a different woman in the central role. The final version shows Bathsheba Sherman by unmistakable iconography.\n\nThe one carved after hers shows no human figure. Just the shape of something that wears the house like a body.\n\nAt the chamber's center: a stone basin filled with black water that does not reflect the ceiling. It reflects something far above it — or far below.",
+          "sanityChange": -25,
+          "evidence": "Pre-colonial ritual chamber — entity origin site, 400-year ritual cycle confirmed",
           "item": "cursed bone",
-          "nextLevel": 6
+          "nextLevel": 10
         }
       },
       {
-        "text": "Follow the markings on the tunnel wall",
+        "text": "Map the passage walls — the symbols may reveal how to end this",
         "consequence": {
-          "text": "The markings form a map etched in blood—ancient, but still fresh. It shows the entire mansion and something beneath it. A network of tunnels. A deeper place. The map has an X marking what appears to be the center of the house. As you follow it, the tunnel slopes downward more sharply. Each step down feels like stepping through time itself.",
-          "evidence": "map evidence",
+          "text": "The symbols coalesce into a pattern. The Warrens' demonologist, Father Javier, identified this pattern in a 1973 letter to Ed: a 'tethering glyph,' meaning the entity is bound to a specific physical point and can only be permanently expelled by destroying that point's sanctity or sanctifying it beyond its capacity to hold darkness.\n\nThe physical point is the altar in the root cellar.\n\nYou understand now why the Warrens never fully succeeded. They tried to bind her outward. To close the door. But the door cannot be closed from outside the room.",
+          "evidence": "Passage glyph mapping — expulsion method identified",
           "nextLevel": 1
         }
       },
       {
-        "text": "Turn back and find another way out",
+        "text": "Return upstairs — the passage is too exposed",
         "consequence": {
-          "text": "You retrace your steps. The entrance is sealed with fresh bricks—barely dry mortar still visible. Something is keeping you inside. As you turn to run, a hand emerges from the wall, cold and impossibly long. It doesn't grab you, but the gesture is clear: there is nowhere to escape to. You're exactly where wanted to be.",
+          "text": "You turn back. The passage has lengthened. What took you four minutes to walk takes twenty minutes to retrace. The walls shift imperceptibly — by fractions of inches, but enough. The passage is breathing, contracting and expanding in a cycle too slow for eyes to track but not too slow for your nervous system.\n\nBy the time you find the cellar stairs, you have been in the passage for forty minutes. You were only gone eleven. The Warrens noted this temporal distortion in their files. Ed called it 'the house digesting a visitor.'\n\nThe stairs creak under your weight. But you didn't step on them yet.",
           "sanityChange": -18,
-          "evidence": "paranormal presence",
+          "evidence": "Temporal distortion in sub-basement passage — active spatial manipulation",
           "nextLevel": 3
         }
       }
@@ -246,68 +241,68 @@
   },
   {
     "id": 8,
-    "title": "Library",
-    "description": "Bookshelves tower three stories high. Many books have no titles. Some are bound in leather that looks disturbingly like skin. Others are chained to prevent their removal. The library is impossibly vast—larger than the mansion should contain. A rolling ladder reaches toward shelves shrouded in permanent shadow. In the center, a reading desk holds a single book: your own personal diary, from years ago. A note is placed atop it: 'We've been waiting for you.'",
+    "title": "The Investigation Archive",
+    "description": "Whoever came here after the Warrens tried to do what investigators do: they documented everything. The archive room holds four decades of evidence that no one ever filed, published, or retrieved.\n\nBoxes of photographs. Reel-to-reel audio tapes labeled in careful handwriting. Notebooks from at least six different people. A corkboard covered in strings connecting clippings, symbols, and names — and at the center of the board, circled in red ink, a single date: today's date.\n\nSomeone knew you were coming. Someone has been waiting a long time to show you this room.\n\nThe door locks behind you without a sound.",
     "decisions": [
       {
-        "text": "Open and read your diary",
+        "text": "Study the corkboard — understand what you're actually facing",
         "consequence": {
-          "text": "Your diary contains memories you don't have. Events you never experienced but somehow remember reading about. The later entries describe events happening right now. The final entry, dated last night, describes your discovery of this very diary. How did you write about reading your own diary before you read it? As you close the book, new words appear on the blank final page. In your own handwriting: 'She's waiting in the basement now.'",
-          "sanityChange": -25,
-          "evidence": "paranormal evidence",
+          "text": "The corkboard tells the story of every investigator who entered this house after the Warrens. Fourteen people. The strings show how each of them moved through the house, what they found, when they stopped finding anything — when they stopped.\n\nEleven of the fourteen have no exit record. No discharge from the property. They are simply present on the board until they aren't.\n\nThe newest string is red. It traces the rooms you have already visited. Someone added it recently — the ink is still slightly wet. The string leads from this room to a final pin at the center of the board: THE FINAL CHAMBER. YOU WILL GO THERE. THIS IS NOT A PREDICTION.\n\nThe door unlocks behind you.",
+          "sanityChange": -20,
+          "evidence": "Investigation archive — 14 prior investigators, 11 unaccounted for",
           "nextLevel": 10
         }
       },
       {
-        "text": "Break a chain and remove a forbidden book",
+        "text": "Listen to one of the audio recordings — evidence of EVP may be here",
         "consequence": {
-          "text": "The chain dissolves at your touch as if it was never real. The book is unmarked, but as you open it, words form on the blank pages. A spell. A summoning. Your eyes compel you to read every word. As you finish, you understand that you've not read a summoning—you've become a summoning. Something is arriving. Or arriving back. The book burns in your hands, leaving no ash.",
-          "sanityChange": -28,
-          "evidence": "forbidden knowledge",
+          "text": "The first tape is labeled WARREN SESSION 7 — DO NOT PLAY ALONE. You play it alone.\n\nThe recording begins with Ed Warren's voice, clear and steady, leading a blessing of the room. Then Lorraine: 'Ed. Ed, don't look at the— Ed.' Then nothing for two minutes. Then a voice that is neither of them: a low, measured voice speaking in a language that sounds like Latin reversed, speaking for nine minutes without stopping.\n\nYou understand none of the words. But your body understands. Halfway through the tape, you realize you have been crying since it began. Not from sadness. From recognition. Some part of you has heard this before.",
+          "sanityChange": -22,
+          "evidence": "Warren Session 7 audio — unknown language, physiological response confirmed",
           "item": "cursed book",
-          "nextLevel": 4
+          "nextLevel": 5
         }
       },
       {
-        "text": "Climb the rolling ladder to the highest shadows",
+        "text": "Find and read the Warrens' case notes — their conclusions are the only reliable guide",
         "consequence": {
-          "text": "The ladder climbs higher than should be possible. The ceiling of the library fades above you into something else—stars, or eyes. At the top, in the shadow, you find a book with your name embossed on its spine in gold. It's warm. Inside, detailed accounts of every moment of your life—including this one. Including your death. Which is tomorrow.",
-          "sanityChange": -22,
-          "evidence": "paranormal knowledge",
-          "nextLevel": 9
+          "text": "The Warrens' notebook is in the third box. Ed's handwriting is precise, clinical. His final entry from this house: 'Bathsheba Sherman was a vessel, not a source. What used her is still here. Still using. The house is not the haunting — the house is the body. The entity is the soul inside it. You cannot exorcise a soul from its own body. You can only ask it to leave. You can only make leaving seem preferable to staying.'\n\nLorraine's addendum, in smaller handwriting: 'It will not leave willingly. Give it no choice. Give it something it fears more than remaining. We brought the cross. We brought the prayer. We left both here for the one who comes after us. God keep you.'",
+          "sanityChange": -5,
+          "evidence": "Warren case notes — entity classification, expulsion methodology",
+          "nextLevel": 4
         }
       }
     ]
   },
   {
     "id": 9,
-    "title": "Bedroom Corridor",
-    "description": "An endless hallway lined with bedroom doors. Each door is identical—white paint peeling to reveal older wood beneath. You count the doors as you pass: 13, 26, 52... they increase in multiples. The doors are numbered, but the numbers don't follow sequence. Between each door hangs a portrait of a child, eyes always watching. Footsteps echo behind you, matching your pace. When you slow, they slow. When you stop, they stop. You've been hearing them since you entered.",
+    "title": "The Corridor of the Possessed",
+    "description": "The Warren files document eleven confirmed possessions in this house across forty years. Not all of them were Carolyn Perron. Some were visitors. Some were investigators. One was a priest who came to perform an exorcism and needed one of his own performed before he could leave.\n\nThe corridor walls show the evidence: dents from hands at head height, scratches at floor level from fingernails. The doors on either side bear the marks of people trying to exit rooms they could not leave.\n\nThe temperature drops here. Not the cold of stone and absence of heat — a directed cold, the cold of something watching, the cold of a gaze.\n\nAt the far end of the corridor, a figure stands. It has your silhouette. When you raise your hand, it raises a hand. But it is three seconds ahead of you.",
     "decisions": [
       {
-        "text": "Open a door at random",
+        "text": "Confront your reflection — the Warrens described this as a 'displacement phenomenon'",
         "consequence": {
-          "text": "Inside, a bedroom frozen in time. A child sits on a bed, back to you, perfectly still. As you observe, it slowly turns. Its face is porcelain white, features too perfect to be real. When it smiles, its teeth are far too many. You close the door. When you turn back, all the other doors are open. In each one, the same child looks out at you.",
-          "evidence": "ghost sighting",
-          "sanityChange": -26,
+          "text": "You walk toward it. It walks toward you. The distance between you does not decrease at the rate it should.\n\nAt ten feet, you can see its face. Your face. But older. The eyes wrong — not the color, but the quality of what looks through them. It has been wearing your face for longer than you have been alive.\n\nAt five feet, it speaks. Your voice, your cadence, but the words are not yours: 'She has made room for you. There are worse things than becoming part of this house. The ones in the walls have each other.'\n\nYou reach for it. Your hand passes through. You are alone in the corridor. But you can still hear your own voice, from somewhere inside the walls, finishing a sentence you don't remember starting.",
+          "sanityChange": -28,
+          "evidence": "Displacement phenomenon — doppelganger contact, pre-possession warning",
           "nextLevel": 10
         }
       },
       {
-        "text": "Confront the footsteps behind you",
+        "text": "Open one of the scarred doors and document the room inside",
         "consequence": {
-          "text": "You spin around. The hallway behind you is empty. But the footsteps continue, now inside your head—a rhythm matching your heartbeat. Your reflection in the window shows someone standing behind you. But when you turn, there's no one. The reflection doesn't stop looking at you.",
-          "sanityChange": -20,
-          "evidence": "paranormal presence",
+          "text": "The room was a bedroom. The bed is overturned. The window glass is broken outward. The carpet is scratched in concentric circles around a point in the center of the room where a person once stood for a very long time.\n\nOn the wall, written in a hand that grew increasingly uncontrolled as it descended — calm at the top, frantic at the bottom, then calm again, a different calm, a surrendered calm: the entire text of the Roman Rite of Exorcism. Every word. All forty-three pages, compressed into a single wall, tiny and precise, in a handwriting that matches the photographs of the priest from 1979.\n\nAt the bottom, below the last word of the rite: 'It didn't work. Nothing works. But I think I understand why, now. She doesn't fear God. She fears being forgotten.'",
+          "sanityChange": -18,
+          "evidence": "1979 exorcism transcript — failure analysis, entity vulnerability identified",
           "nextLevel": 8
         }
       },
       {
-        "text": "Run toward the end of the corridor",
+        "text": "Run — get to the final chamber before the entity consolidates",
         "consequence": {
-          "text": "You run, but the corridor expands faster than you move. The doors multiply. The portraits multiply. Their eyes follow you. Behind, ahead, around—you're surrounded by watching children who have never been children. Everything smells like old milk and copper. When you finally stop, breathless, you realize you haven't moved at all. You're standing exactly where you started.",
+          "text": "You run. The corridor extends. The doors multiply. Your reflection stays exactly ten feet behind you regardless of your speed — it is not running. It is walking. And the gap is not changing.\n\nYou stop. It stops.\n\nIn the silence, you hear the house telling you something — not in words but in the particular quality of its silence, the way a room sounds when everyone in it has been listening to you for a long time.\n\nYou have been running in the wrong direction. The chamber is not at the end of the corridor. It is beneath you. It has always been beneath you. The floor gives slightly under your next step, like a drum being struck from below.",
           "sanityChange": -15,
-          "evidence": "paranormal activity",
+          "evidence": "Spatial manipulation confirmed — entity actively guides movement",
           "nextLevel": 7
         }
       }
@@ -315,33 +310,33 @@
   },
   {
     "id": 10,
-    "title": "Final Chamber",
-    "description": "The final chamber lies beneath the mansion, deeper than should be possible. The room is circular, with a domed ceiling carved from stone that glows with its own light. In the center, a chair—a throne, perhaps. Behind the throne, a wall of water that hangs suspended without flowing. And in the water, you see her: a woman made of shadows and light, with eyes that have watched this mansion, and every person in it, since before it was built. She is beautiful and terrible. She is called 'The Entity'. She has been waiting for you. She says your name like she's tasted it for centuries.",
+    "title": "The Final Chamber — Bathsheba",
+    "description": "The chamber is below everything. Below the passage, below the root cellar, below the foundation. It should not exist and yet here it is: circular, stone-walled, lit by no source you can identify.\n\nBathsheba Sherman stands at the center. Not her ghost, not a vision — she is here. Hanged in 1863 and here in 1971 and here now. Beautiful in the way that wrong things are beautiful. Her feet hover two inches above the stone. Her eyes are the color of the black water in the séance mirror.\n\nShe says your name — '{playerName}' — the way a person says the name of someone they have been patient about for a very long time.\n\n'I have been waiting since before you were born,' she says. 'I have been waiting since before your parents were born. In this house I am God. In this house I have always been God. Kneel.'",
     "decisions": [
       {
-        "text": "Accept the Entity's offer of power and eternal knowledge",
+        "text": "Raise the Warren's rowan cross and speak the Prayer of Exorcism — give her no choice",
         "consequence": {
-          "text": "You step forward. Her hand reaches through the veil of water and touches your forehead. Knowledge flows into you—infinite, overwhelming, madness-inducing. You see every moment of every life lived in this mansion. You become the mansion. The walls are your skin. The shadows are your thoughts. You are home. But home is alive, and alive is torture. Eternal torture.",
-          "dead": true,
-          "evidence": "entity contact",
-          "sanityChange": -50
-        }
+          "text": "The cross burns hot in your hand. She sees it and the beauty leaves her face — what remains is older and angrier than anything that has ever been beautiful.\n\n'Where did you find—'\n\nYou begin. 'I exorcise thee, every unclean spirit, every power of darkness, every incursion of the infernal enemy—'\n\nShe screams. The sound is the house itself screaming — the walls crack, the stone weeps, something massive and old tears against a bond it cannot break. She charges toward you and cannot close the distance. The cross holds a perimeter she cannot cross.\n\nYou do not stop. The full prayer. Every word. As the final phrase leaves your mouth, the chamber fills with a sound like a lock turning in a door the size of the world. Bathsheba Sherman is drawn downward into the stone. Into whatever waits below.\n\nThe lights come on. All of them. Every window in the house above shows morning.\n\nLorraine Warren's cross lies on the cold stone floor. You leave it where it is. Someone else may need it.",
+          "ending": "SURVIVED",
+          "evidence": "Bathsheba Sherman — bound and expelled, Warren rite successful",
+          "sanityChange": -10
+        },
+        "requiredItem": "anti-demon cross"
       },
       {
-        "text": "Use the evidence you've collected to banish her",
+        "text": "Present all your evidence and invoke the binding ritual — make staying more costly than leaving",
         "consequence": {
-          "text": "You hold up the evidence—the symbols, the recordings, the photographs, the cursed relic. You speak words you don't understand but somehow know. The Entity screams, a sound that breaks the water's surface. She pulls against some invisible bond. The mansion shakes. Slowly, impossibly, her grip on this reality weakens. The water freezes. She is locked away—for now. The house will not forget her. And neither will you. But you are free. The door opens. The morning sun waits outside.",
+          "text": "You lay out everything: the recordings, the photographs, the inscriptions, the documents, the testimony of every investigator who came before. You speak the names of the eleven who never left. You speak the Warrens' names. You speak Carolyn Perron's name.\n\nEach name lands in the chamber like a stone. Each piece of evidence is a claim against her. Against what she has done in this house across four centuries.\n\nBathsheba does not scream. She grows still. And in the stillness, something else happens — the thing the priest understood in 1979, written on the wall in microscopic letters: she fears being forgotten, being reduced to record, being documented into smallness.\n\nYou are making her small. Evidence by evidence, name by name, room by room. You are turning her from a God into a case file.\n\nThe chamber dims. When the lights return, she is diminished — not gone, but smaller. Bound to a thing that can be carried in a box marked WARREN CASE FILE #19. You leave with the box. The house lets you go.",
           "ending": "SURVIVED",
-          "evidence": "banishment ritual",
+          "evidence": "Full investigation complete — entity reduced, case file sealed",
           "sanityChange": -20
         }
       },
       {
-        "text": "Try to escape without confrontation",
+        "text": "Kneel — you are too exhausted, too broken, and she is too old to fight",
         "consequence": {
-          "text": "You turn to run. The Entity doesn't move. She simply laughs—a sound like wind through empty rooms. The door seals before you reach it. The walls move inward. She whispers into your ear that nowhere inside the mansion is an exit, only deeper rooms, only further descent. The chair appears behind you. It's time to sit now. To wait. To become what she was: the next guardian. The next voice in the whispers. The next Entity watching for new arrivals.",
+          "text": "Your legs fold. Not from weakness — from something older than resistance, the part of every living thing that knows when it is facing something it was not made to face.\n\nBathsheba does not smile. She is not pleased — she is simply right. She has always been right about this.\n\nShe steps forward. Her hand on your forehead is cold and then not cold — it is warm, it is mother-warm, it is the warmth of the house itself. You feel yourself expanding outward through the walls, into every room, into every story, into every name scratched into that stone.\n\nYou are the house now. You have always been the house. And the house is patient. The house is waiting.\n\nIt will not be long before someone else comes through the front door.",
           "ending": "POSSESSED",
-          "evidence": "entity merger",
           "sanityChange": -45
         }
       }

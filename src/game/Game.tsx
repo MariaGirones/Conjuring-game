@@ -38,11 +38,14 @@ function Game() {
   const [ending, setEnding] = useState<EndingType>(null)
   const [showPsychologicalEffect, setShowPsychologicalEffect] = useState(false)
 
+  // Reset ending when returning to start screen
+  useEffect(() => {
+    if (!playerName) setEnding(null)
+  }, [playerName])
+
   // Start ambient audio when game begins
   useEffect(() => {
-    if (playerName) {
-      startAmbient()
-    }
+    if (playerName) startAmbient()
   }, [playerName, startAmbient])
 
   // Update story when level or game state changes
@@ -50,154 +53,120 @@ function Game() {
     if (!playerName || !alive) return
 
     const level = engine.getLevel(currentLevel)
-    if (level) {
-      let availableDecisions = level.decisions
+    if (!level) return
 
-      // Filter decisions based on conditions
-      availableDecisions = availableDecisions.filter(decision => {
-        if (decision.minSanity && sanity < decision.minSanity) return false
-        if (decision.requiredItem && !inventory.includes(decision.requiredItem)) return false
-        return true
-      })
+    // Filter choices by sanity threshold and required items
+    const availableDecisions = level.decisions.filter(d => {
+      if (d.minSanity && sanity < d.minSanity) return false
+      if (d.requiredItem && !inventory.includes(d.requiredItem)) return false
+      return true
+    })
 
-      setCurrentStory(level.description)
-      setDecisions(availableDecisions)
+    setCurrentStory(level.description.replace(/\{playerName\}/g, playerName))
+    setDecisions(availableDecisions)
 
-      // Trigger psychological effects at low sanity
-      if (sanity < 40) {
-        playEffect('whisper')
-        setShowPsychologicalEffect(true)
-        setTimeout(() => setShowPsychologicalEffect(false), 3000)
-      }
-
-      if (sanity < 20) {
-        playEffect('heartbeat')
-      }
+    if (sanity < 40) {
+      playEffect('whisper')
+      setShowPsychologicalEffect(true)
+      setTimeout(() => setShowPsychologicalEffect(false), 3000)
     }
+    if (sanity < 20) playEffect('heartbeat')
+
   }, [playerName, currentLevel, alive, sanity, playEffect])
 
   const handleChoice = (index: number) => {
     const consequence = engine.makeChoice(currentLevel, index)
     if (!consequence) return
 
-    setCurrentStory(consequence.text)
+    setCurrentStory(consequence.text.replace(/\{playerName\}/g, playerName))
 
-    // Handle sanity changes
     if (consequence.sanityChange) {
       decreaseSanity(-consequence.sanityChange)
-      const newSanity = sanity + consequence.sanityChange
-
-      if (newSanity <= 0) {
+      if (sanity + consequence.sanityChange <= 0) {
         setEnding('DEAD')
         setAlive(false)
         return
       }
     }
 
-    // Collect items and evidence
-    if (consequence.item) addItem(consequence.item)
+    if (consequence.item)     addItem(consequence.item)
     if (consequence.evidence) addEvidence(consequence.evidence)
 
-    // Handle death
     if (consequence.dead) {
       setEnding('POSSESSED')
       setAlive(false)
       return
     }
 
-    // Handle endings
     if (consequence.ending) {
-      if (consequence.ending === 'SURVIVED') {
-        setEnding('SURVIVED')
-      } else if (consequence.ending === 'POSSESSED') {
-        setEnding('POSSESSED')
-      }
+      setEnding(consequence.ending as EndingType)
       return
     }
 
-    // Progress to next level
-    if (consequence.nextLevel) {
-      setCurrentLevel(consequence.nextLevel)
-    }
+    if (consequence.nextLevel) setCurrentLevel(consequence.nextLevel)
   }
 
-  // Show start screen
-  if (!playerName) {
-    return <StartScreen />
-  }
+  if (!playerName)  return <StartScreen />
+  if (ending)       return <EndingScreen ending={ending} sanity={sanity} evidence={evidence} />
+  if (!alive)       return <EndingScreen ending="DEAD"   sanity={sanity} evidence={evidence} />
 
-  // Show ending screen
-  if (ending) {
-    return <EndingScreen ending={ending} sanity={sanity} evidence={evidence} />
-  }
-
-  // Show game over if not alive
-  if (!alive) {
-    return <EndingScreen ending="DEAD" sanity={sanity} evidence={evidence} />
-  }
+  const locationTitle = engine.getLevel(currentLevel)?.title ?? 'Unknown Location'
 
   return (
-    <div className="flex flex-col h-screen bg-stone-100 text-stone-900 dark:bg-black dark:text-white">
-      {/* Header with controls */}
-      <div className="flex items-center justify-between p-3 border-b border-stone-300 bg-stone-200 dark:border-gray-700 dark:bg-gray-900">
+    <div className="flex flex-col h-screen" style={{ backgroundColor: 'var(--color-bg-primary)', color: 'var(--color-text-primary)' }}>
+
+      {/* ── Header ───────────────────────────────── */}
+      <header className="flex items-center justify-between px-5 py-2 border-b shrink-0"
+        style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-bg-secondary)' }}>
+
         <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-serif font-bold text-stone-900 dark:text-white">THE CONJURING</h1>
-          <span className="text-sm text-stone-500 dark:text-gray-500">Level {currentLevel}/10</span>
+          {/* Cinzel Decorative via font-display utility class */}
+          <h1 className="font-display text-xl tracking-widest"
+            style={{ color: 'var(--color-text-primary)' }}>
+            THE CONJURING
+          </h1>
+          <span className="hidden sm:block text-xs uppercase tracking-widest font-mono border-l pl-4"
+            style={{ borderColor: 'var(--color-border)', color: 'var(--color-text-muted)' }}>
+            {locationTitle}
+          </span>
         </div>
-        <div className="flex gap-2">
-          {/* Theme toggle — switches Light / Dark mode */}
+
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-mono" style={{ color: 'var(--color-text-muted)' }}>
+            {currentLevel}/10
+          </span>
           <ThemeToggle />
           <AudioToggle />
         </div>
-      </div>
+      </header>
 
-      {/* Main content */}
-      <div className="flex flex-1 overflow-hidden gap-4 p-4">
-        {/* Main game area */}
-        <div className="flex-1 flex flex-col overflow-hidden">
-          <div
-            className={`flex-1 overflow-y-auto mb-4 transition-all ${
-              showPsychologicalEffect ? 'sanity-low' : ''
-            } ${sanity < 20 ? 'sanity-critical' : ''}`}
-          >
+      {/* ── Main layout ──────────────────────────── */}
+      <div className="flex flex-col md:flex-row flex-1 overflow-hidden gap-3 p-3">
+
+        {/* Left: story + decisions — scrolls as a unit */}
+        <div className="flex-1 overflow-y-auto min-h-0">
+          <div className={`transition-all ${
+            showPsychologicalEffect ? 'sanity-low' : ''
+          } ${sanity < 20 ? 'sanity-critical' : ''}`}>
             <StoryPanel story={currentStory} sanity={sanity} />
           </div>
-
-          {/* Decision buttons */}
-          <div className="overflow-y-auto">
-            <DecisionButtons decisions={decisions} onChoice={handleChoice} />
-          </div>
+          <DecisionButtons decisions={decisions} onChoice={handleChoice} />
         </div>
 
-        {/* Right sidebar - Game status */}
-        <div className="w-72 flex flex-col gap-4 overflow-y-auto">
-          <div className="game-panel">
-            <SanityMeter />
-          </div>
-
-          <div className="game-panel">
-            <InventoryPanel />
-          </div>
-
-          <div className="game-panel">
-            <EvidenceTracker />
-          </div>
-
-          {/* Player info */}
-          <div className="game-panel text-xs">
-            <div className="text-stone-500 dark:text-gray-500">Currently in</div>
-            <div className="text-stone-900 font-serif dark:text-white">
-              {engine.getLevel(currentLevel)?.title || 'Unknown Location'}
-            </div>
-          </div>
-        </div>
+        {/* Right sidebar — horizontal scroll on mobile, vertical on desktop */}
+        <aside className="w-full md:w-64 xl:w-72 flex flex-row md:flex-col gap-3 overflow-x-auto md:overflow-x-hidden md:overflow-y-auto shrink-0">
+          <div className="game-panel min-w-[160px] md:min-w-0"><SanityMeter /></div>
+          <div className="game-panel min-w-[180px] md:min-w-0"><InventoryPanel /></div>
+          <div className="game-panel min-w-[200px] md:min-w-0"><EvidenceTracker /></div>
+        </aside>
       </div>
 
-      {/* Psychological effect message */}
+      {/* Psychological effect whisper */}
       {showPsychologicalEffect && sanity < 40 && (
-        <div className="fixed bottom-4 left-4 text-red-600 dark:text-red-400 text-sm italic animate-pulse">
-          <p>★ You feel something watching you...</p>
-        </div>
+        <p className="fixed bottom-4 left-5 text-sm italic fade-in"
+          style={{ color: 'var(--color-red)' }}>
+          ★ &nbsp; You feel something watching you...
+        </p>
       )}
     </div>
   )

@@ -1,300 +1,213 @@
-# 🏚️ The Conjuring Game
+# The Conjuring — A Warren Investigation
 
-An interactive dark fiction horror web application inspired by The Conjuring house. Explore a cursed mansion, collect paranormal evidence, and survive the night while managing your mental sanity.
+An interactive psychological horror text adventure based on the documented paranormal investigations of Ed and Lorraine Warren (Rhode Island, 1971). Navigate the Perron farmhouse, gather evidence, manage your sanity, and confront the entity known as Bathsheba Sherman.
 
-**Play the game online:** [https://mariagirones.github.io/Conjuring-game/](https://mariagirones.github.io/Conjuring-game/)
+**Play online:** [https://mariagirones.github.io/Conjuring-game/](https://mariagirones.github.io/Conjuring-game/)
 
-## 🎮 Game Features
+---
 
-- **10 Immersive Levels** - Navigate through different areas of the haunted mansion
-- **Sanity System** - Your mental state deteriorates as you encounter supernatural phenomena
-- **Evidence Collection** - Gather proof of paranormal activity to unlock the true ending
-- **Multiple Endings** - Survive, get possessed, or lose your mind - three different outcomes
-- **Audio System** - Atmospheric horror sounds and ambient music
-- **Dark Mode Only** - Optimized for creepy atmosphere and reduced eye strain
-- **Persistent Progress** - Your game state is saved to localStorage automatically
-- **Responsive Design** - Play on desktop, tablet, or mobile
+## Gameplay
 
-## 🚀 Quick Start
+- **Read** each scene carefully — the story contains clues about what to do next.
+- **Make decisions** that appear based on your current sanity level and the items in your inventory.
+- **Collect items** — some are passive (camera, voice recorder), some are consumable.
+- **Use consumables** from the Inventory panel at any time to restore sanity.
+- **Document evidence** — your Field Report log tracks every piece. You'll need it at the end.
+- **Survive** by gathering evidence and using the Warren's rowan cross in the Final Chamber — or by binding Bathsheba with your full case file.
 
-### Play Online
-Simply visit [https://mariagirones.github.io/Conjuring-game/](https://mariagirones.github.io/Conjuring-game/) to play.
+### Items of note
 
-### Run Locally
+| Item | Where to find | Effect |
+|------|--------------|--------|
+| Anxiety Pills | Root Cellar (Level 3) | Take them — restores +25 sanity |
+| Holy Water | Chapel area (Level 2) | Anoint yourself — restores +15 sanity |
+| Warren's Rowan Cross | Hidden under a pew, Chapel (Level 2) | Clutch it — restores +15 sanity; **required** for the direct exorcism ending |
+| Voice Recorder | Confessional (Level 5) | Passive — captures EVP evidence |
+| Film Camera | Children's Ward (Level 4) | Passive — photographs paranormal activity |
+
+---
+
+## Running Locally
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/MariaGirones/Conjuring-game.git
 cd Conjuring-game
 
-# Install dependencies
+# 2. Install dependencies
 npm install
 
-# Start development server
+# 3. Start the development server
 npm run dev
+# Opens at http://localhost:5173/Conjuring-game/
 
-# Open http://localhost:5173 in your browser
+# 4. Build for production
+npm run build
+# Output written to dist/
+
+# 5. Preview the production build locally
+npm run preview
 ```
 
-### Build for Production
+---
+
+## Deploying to GitHub Pages
+
+The repository includes a CI/CD workflow at `.github/workflows/pages.yml` that automatically builds and deploys whenever you push to `main`.
+
+### One-time setup (do this once)
+
+1. Open your repository on GitHub.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. Save.
+
+### Every deployment after that
 
 ```bash
-npm run build    # Creates optimized build in /dist
-npm run preview  # Preview production build locally
+git add .
+git commit -m "Your message"
+git push origin main
 ```
 
-## 🏗️ Project Architecture
+The workflow will:
+1. Check out your code
+2. Install dependencies (`npm ci`)
+3. Build the project (`npm run build` → `dist/`)
+4. Deploy `dist/` to GitHub Pages
 
+Live URL after deployment:
 ```
-/src
-├── /components        # React UI components
-│   ├── AudioToggle.tsx
-│   ├── DecisionButtons.tsx
-│   ├── EndingScreen.tsx
-│   ├── EvidenceTracker.tsx
-│   ├── InventoryPanel.tsx
-│   ├── SanityMeter.tsx
-│   ├── StartScreen.tsx
-│   ├── StoryPanel.tsx
-│   └── ThemeToggle.tsx
-├── /engine           # Game logic
-│   └── StoryEngine.ts
-├── /game            # Main game component
-│   └── Game.tsx
-├── /hooks           # Custom React hooks
-│   ├── useAudio.ts
-│   ├── useGameStore.ts
-│   └── useTheme.tsx
-├── /data            # Game content (JSON)
-│   ├── levels.json
-│   ├── items.json
-│   └── events.json
-├── /styles         # Global styles
-├── App.tsx         # Root component
-├── main.tsx        # Entry point
-└── index.css       # Tailwind setup
+https://mariagirones.github.io/Conjuring-game/
 ```
 
-### Tech Stack
+> **Note:** The Vite config sets `base: '/Conjuring-game/'` — this must match the repository name exactly. If you rename the repo, update this in `vite.config.ts`.
 
-- **Frontend Framework**: React 18
-- **Build Tool**: Vite 4
-- **Styling**: Tailwind CSS 3
-- **State Management**: Zustand
-- **Language**: TypeScript
-- **Persistence**: Browser localStorage
+---
 
-## 🎮 How the Game Engine Works
+## Theme System
 
-The game uses a **JSON-based narrative engine** that loads story content from data files:
+| Mode | Appearance |
+|------|-----------|
+| Dark (default) | Near-black background, warm off-white text, velvet atmosphere |
+| Light | Aged parchment background (#f2ebe0), near-black text — still gothic |
 
-### Game Flow
+- Toggle with the **☀️ / 🌑** button in the header or on the start screen.
+- Preference is saved in `localStorage` and restored on next visit.
+- Implemented with CSS custom properties (`:root` = light, `.dark` = dark) + Tailwind `darkMode: 'class'`.
+- All colors meet WCAG AA contrast ratios in both modes.
 
-1. **Player enters name** → Game initializes with level 1
-2. **Story text displays** → Current level description renders
-3. **Decisions presented** → 2-4 choices for player to make
-4. **Consequence triggers** → Choice leads to:
-   - Sanity changes
-   - Item acquisition
-   - Evidence collection
-   - Level progression or death
-5. **Multiple endings** → Based on final choices and sanity level
+---
 
-### Level Structure
+## Project Structure
 
-Each level in `src/data/levels.json` contains:
-
-```json
-{
-  "id": 1,
-  "title": "Entrance Hall",
-  "description": "You stand before the mansion...",
-  "decisions": [
-    {
-      "text": "Go left",
-      "consequence": {
-        "text": "You walk into darkness...",
-        "sanityChange": -5,
-        "item": "flashlight",
-        "evidence": "cold spot",
-        "nextLevel": 2
-      }
-    }
-  ]
-}
+```
+Conjuring-game/
+├── index.html                     # Entry point — Google Fonts loaded here
+├── vite.config.ts                 # base: '/Conjuring-game/', outDir: 'dist'
+├── tailwind.config.js             # darkMode: 'class'
+├── src/
+│   ├── main.tsx                   # React root
+│   ├── App.tsx                    # ThemeProvider wrapper
+│   ├── index.css                  # CSS variables, Gothic typography, custom classes
+│   ├── data/
+│   │   ├── levels.json            # Full story — 10 levels, Warren-case inspired
+│   │   └── items.json             # Item definitions (usable flag, sanityRestore value)
+│   ├── engine/
+│   │   └── StoryEngine.ts         # Reads levels.json, resolves choices
+│   ├── hooks/
+│   │   ├── useGameStore.ts        # Zustand store — inventory, sanity, evidence, useItem
+│   │   ├── useTheme.tsx           # Light/dark toggle, localStorage persistence
+│   │   └── useAudio.ts            # Web Audio API — filtered noise ambient + SFX
+│   ├── game/
+│   │   └── Game.tsx               # Main game layout and choice logic
+│   └── components/
+│       ├── StartScreen.tsx        # Title / entry screen
+│       ├── EndingScreen.tsx       # SURVIVED / POSSESSED / DEAD endings
+│       ├── StoryPanel.tsx         # Story manuscript area
+│       ├── DecisionButtons.tsx    # Choice buttons
+│       ├── InventoryPanel.tsx     # Item list with Use buttons for consumables
+│       ├── EvidenceTracker.tsx    # Field report / investigation log
+│       ├── SanityMeter.tsx        # Sanity progress bar
+│       ├── AudioToggle.tsx        # Mute / unmute
+│       └── ThemeToggle.tsx        # Light / Dark mode toggle
+└── .github/
+    └── workflows/
+        └── pages.yml              # CI/CD: install → build → deploy to GitHub Pages
 ```
 
-### Consequence Objects
+---
 
-```typescript
-interface Consequence {
-  text: string              // What happens after choice
-  sanityChange?: number     // -50 to +10 (negative = loss)
-  item?: string            // Item to add to inventory
-  evidence?: string        // Clue to add to evidence list
-  nextLevel?: number       // Level to progress to
-  ending?: string          // "SURVIVED" | "POSSESSED"
-  dead?: boolean           // Immediate game over
-}
-```
+## Adding Content
 
-## ➕ Adding New Levels
+### New level
 
-1. Open `src/data/levels.json`
-2. Add a new level object with a unique `id`:
+Add an object to `src/data/levels.json`:
 
 ```json
 {
   "id": 11,
-  "title": "New Room",
-  "description": "A terrifying new location...",
+  "title": "The Cellar Passage",
+  "description": "You descend further than you should...",
   "decisions": [
     {
-      "text": "First choice",
+      "text": "Follow the sound",
       "consequence": {
-        "text": "What happens...",
-        "sanityChange": -10,
-        "nextLevel": 12
+        "text": "The sound leads you somewhere worse.",
+        "sanityChange": -12,
+        "evidence": "Unidentified sound source — sub-basement",
+        "nextLevel": 7
       }
     }
   ]
 }
 ```
 
-3. Reference the new level from other levels' `nextLevel` properties
-4. Build: `npm run build`
+Optional decision fields: `minSanity` (hide if player sanity is below this), `requiredItem` (hide if item not in inventory).
 
-## ➕ Adding New Items
+### New usable item
 
-Items are defined in `src/data/items.json`:
+Add to `src/data/items.json`:
 
 ```json
 {
-  "id": "new-item",
-  "name": "Item Display Name",
-  "description": "What is this item?",
-  "effect": "What does it do?",
-  "rarity": "common|uncommon|rare|epic"
+  "id": "rosary",
+  "name": "Ed Warren's Rosary",
+  "description": "Worn wooden beads. Still warm.",
+  "usable": true,
+  "sanityRestore": 20,
+  "useLabel": "Pray",
+  "useEffect": "The prayer steadies you. The room feels briefly smaller.",
+  "rarity": "rare"
 }
 ```
 
-Then add it to consequences:
+Then reference it in a level consequence: `"item": "rosary"`.
 
-```json
-"consequence": {
-  "text": "You find something...",
-  "item": "new-item"
-}
-```
+---
 
-## 🎯 Adding New Endings
+## Audio
 
-Modify `src/game/Game.tsx` to add ending logic:
+The game uses the **Web Audio API** — no audio files, no network requests for sound. Fully static.
 
-```typescript
-if (consequence.ending === 'NEW_ENDING') {
-  setEnding('NEW_ENDING')
-}
-```
+- **Ambient**: Lowpass-filtered white noise with a slowly sweeping cutoff + a subtle low-frequency drone.
+- **Whisper effect**: Three bandpass-filtered noise bursts, staggered.
+- **Heartbeat**: Low-shelf boosted sine pulses (lub–dub) triggered at critical sanity.
 
-Then create the ending screen UI in `src/components/EndingScreen.tsx`.
+To add real `.mp3` / `.ogg` files in future, place them in `src/assets/audio/` and load them via `AudioContext.decodeAudioData` in `useAudio.ts`.
 
-## 📚 Available Game Commands
+---
+
+## Commands
 
 ```bash
-npm run dev      # Start dev server on :5173
-npm run build    # Build for production
-npm run preview  # Preview production build
-npm run lint     # Run ESLint checks
+npm run dev      # Development server — http://localhost:5173/Conjuring-game/
+npm run build    # Production build → dist/
+npm run preview  # Preview production build locally
+npm run lint     # ESLint
 ```
 
-## 🌐 GitHub Pages Deployment
+---
 
-This project is automatically deployed to GitHub Pages via GitHub Actions:
-
-1. **Automatic Deployment**: Push to `main` branch triggers build
-2. **Live URL**: [https://mariagirones.github.io/Conjuring-game/](https://mariagirones.github.io/Conjuring-game/)
-3. **Manual Override**: Run `npm run build` locally and commit `/dist` folder
-
-### Enable GitHub Pages
-
-1. Go to **Settings** → **Code and automation** → **Pages**
-2. Set **Source** to "GitHub Actions"
-3. Let the workflow run automatically on push
-
-## 💾 Data Persistence
-
-The game automatically saves to browser localStorage:
-- Player name
-- Current level
-- Sanity level
-- Inventory items
-- Collected evidence
-- Game alive/dead status
-
-Clear localStorage to reset the game.
-
-## 🎨 Customization
-
-### Change Game Colors
-
-Edit `src/index.css`:
-```css
-.horror-button {
-  @apply bg-red-900;  /* Change button colors */
-}
-```
-
-### Adjust Sanity Thresholds
-
-In `src/game/Game.tsx`:
-```typescript
-if (sanity < 40) {  // Change threshold
-  playEffect('whisper')
-}
-```
-
-### Modify Audio
-
-Create audio files and reference in `src/hooks/useAudio.ts`:
-```typescript
-playEffect('custom-sound')  // Needs /audio/effects/custom-sound.mp3
-```
-
-## 📖 Story Levels Overview
-
-1. **Entrance Hall** - Introduction to the mansion
-2. **Chapel** - Religious horrors
-3. **Basement** - Ritual chamber
-4. **Attic** - Child spirits
-5. **Confessional** - Voices from the past
-6. **Ritual Room** - Dark magic pentagon
-7. **Hidden Tunnel** - Underground passages
-8. **Library** - Forbidden knowledge
-9. **Bedroom Corridor** - Endless doors
-10. **Final Chamber** - The Entity awaits
-
-## 🤝 Contributing
-
-Want to improve the game? Here's how:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Commit (`git commit -m 'Add amazing feature'`)
-5. Push to branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
-
-## 📝 License
-
-This project is open source and available under the MIT License.
-
-## 👻 Warnings
-
-⚠️ This game contains:
-- Psychological horror themes
-- Disturbing imagery and narrative
-- References to dark religious themes
-- Content that may affect mental state in players with anxiety
-
-Play at your own discretion. Remember, it's just a game! 🎮
+*In memory of Ed Warren (1926–2006) and Lorraine Warren (1927–2019).*
+*"We don't know everything about this world. But we've seen enough to know it isn't empty." — Lorraine Warren*

@@ -3,78 +3,87 @@
     {
       "id": "lighter",
       "name": "Lighter",
-      "description": "An old, rusted lighter. Still works.",
-      "effect": "Provides light in dark places. Sanity +2 in dark rooms.",
+      "description": "A rusted Zippo. Still sparks.",
+      "usable": false,
       "rarity": "common"
     },
     {
       "id": "flashlight",
       "name": "Flashlight",
-      "description": "A heavy-duty flashlight. The beam is steady.",
-      "effect": "Provides powerful light. Sanity +5 in dark rooms.",
+      "description": "Heavy-duty. The beam is steady even when nothing else is.",
+      "usable": false,
       "rarity": "common"
+    },
+    {
+      "id": "anxiety pills",
+      "name": "Anxiety Pills",
+      "description": "Valium — left by Lorraine Warren with a handwritten note. 'Take these when the walls speak.'",
+      "usable": true,
+      "sanityRestore": 25,
+      "useLabel": "Take",
+      "useEffect": "The sedative quiets the noise. The walls are still moving. But you can breathe.",
+      "rarity": "uncommon"
     },
     {
       "id": "holy water",
       "name": "Holy Water",
-      "description": "Blessed water from an old chapel.",
-      "effect": "Protects against paranormal entities. Sanity +3.",
+      "description": "Water blessed by Father Achampong at St. Michael's, 1973. Ed Warren carried this in every investigation.",
+      "usable": true,
+      "sanityRestore": 15,
+      "useLabel": "Anoint yourself",
+      "useEffect": "The water is cold against your forehead. The presence in the room draws back, fractionally. You feel briefly and inexplicably safe.",
       "rarity": "uncommon"
     },
     {
-      "id": "crucifix",
-      "name": "Crucifix",
-      "description": "An ancient religious artifact.",
-      "effect": "Provides spiritual protection. Can be used to banish weaker entities.",
-      "rarity": "uncommon"
+      "id": "anti-demon cross",
+      "name": "Warren's Rowan Cross",
+      "description": "Hand-carved from rowan wood. Blessed and left by the Warrens for whoever came after them. This is what drove Bathsheba back in 1974.",
+      "usable": true,
+      "sanityRestore": 15,
+      "useLabel": "Clutch it",
+      "useEffect": "The cross burns warm in your hand. Whatever was pressing against the edges of the room retreats. Not far. But far enough.",
+      "rarity": "rare"
     },
     {
       "id": "confessional key",
       "name": "Confessional Key",
-      "description": "A tarnished brass key that opens the confessional.",
-      "effect": "Required to open the confessional room.",
+      "description": "Tarnished brass. Opens the confessional alcove. It pulses warm, then ice cold.",
+      "usable": false,
       "rarity": "key"
     },
     {
       "id": "camera",
-      "name": "Camera",
-      "description": "An old film camera. The shutter still clicks.",
-      "effect": "Can capture paranormal phenomena. Evidence collected is more valuable.",
+      "name": "Film Camera",
+      "description": "Old Polaroid. Every photograph it produces shows something the eye didn't register.",
+      "usable": false,
       "rarity": "uncommon"
     },
     {
       "id": "voice recorder",
       "name": "Voice Recorder",
-      "description": "A vintage tape recorder with fresh batteries.",
-      "effect": "Captures EVP (Electronic Voice Phenomena). Evidence collected is more valuable.",
+      "description": "Reel-to-reel tape recorder. The Warrens used these to capture EVP. It's already recording.",
+      "usable": false,
       "rarity": "uncommon"
     },
     {
       "id": "locket",
       "name": "Cameo Locket",
-      "description": "A delicate piece of jewelry containing a mysterious photograph.",
-      "effect": "Reveals secrets about the mansion's past. Sanity -2 but adds valuable evidence.",
-      "rarity": "rare"
-    },
-    {
-      "id": "cursed relic",
-      "name": "Cursed Relic",
-      "description": "A stone idol that radiates malevolent energy.",
-      "effect": "Increases paranormal sensitivity. Sanity -3 but attracts entities. Evidence is more valuable.",
+      "description": "Jewelry found in the séance room. The photograph inside changes each time you open it.",
+      "usable": false,
       "rarity": "rare"
     },
     {
       "id": "cursed bone",
-      "name": "Cursed Bone",
-      "description": "A bone arranged with ritualistic precision.",
-      "effect": "Connects you to the mansion's past. Sanity -5 but reveals hidden truths.",
+      "name": "Ritual Bone",
+      "description": "From the pre-colonial chamber. Arranged with deliberate precision. Do not carry this for long.",
+      "usable": false,
       "rarity": "rare"
     },
     {
       "id": "cursed book",
-      "name": "Forbidden Book",
-      "description": "A leather-bound book containing forbidden knowledge.",
-      "effect": "Reading grants terrifying insights. Sanity -10 but this is the key to understanding the entity.",
+      "name": "The Warren Session 7 Transcript",
+      "description": "A transcription of what spoke on Warren Session 7. Reading it does something to the reader.",
+      "usable": false,
       "rarity": "epic"
     }
   ]

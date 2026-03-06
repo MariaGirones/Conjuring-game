@@ -1,3 +1,5 @@
+import levels from '../data/levels.json'
+
 interface Level {
   id: number
   title: string
@@ -19,9 +21,8 @@ interface Consequence {
   evidence?: string
   nextLevel?: number
   dead?: boolean
+  ending?: string
 }
-
-import levels from '../data/levels.json'
 
 class StoryEngine {
   getLevel(id: number): Level | undefined {
