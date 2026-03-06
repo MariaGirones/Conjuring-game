@@ -81,8 +81,11 @@ function Game() {
     setCurrentStory(consequence.text.replace(/\{playerName\}/g, playerName))
 
     if (consequence.sanityChange) {
-      decreaseSanity(-consequence.sanityChange)
-      if (sanity + consequence.sanityChange <= 0) {
+      // sanityChange is negative (e.g. -10 means lose 10). Compute new value
+      // before dispatching so the death check uses accurate data, not stale state.
+      const newSanity = Math.max(0, sanity + consequence.sanityChange)
+      decreaseSanity(consequence.sanityChange)
+      if (newSanity <= 0) {
         setEnding('DEAD')
         setAlive(false)
         return

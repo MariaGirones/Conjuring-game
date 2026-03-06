@@ -13,7 +13,7 @@ interface GameState {
   addItem: (item: string) => void
   removeItem: (item: string) => void
   addEvidence: (evidence: string) => void
-  decreaseSanity: (amount: number) => void
+  decreaseSanity: (delta: number) => void  // negative = lose sanity, positive = gain
   // Consume a usable item and restore sanity by the given amount (clamps to 100)
   useItem: (item: string, sanityRestore: number) => void
   setAlive: (alive: boolean) => void
@@ -31,10 +31,15 @@ const useGameStore = create<GameState>()(
       alive: true,
       setPlayerName: (name) => set({ playerName: name }),
       setCurrentLevel: (level) => set({ currentLevel: level }),
-      addItem: (item) => set((state) => ({ inventory: [...state.inventory, item] })),
+      addItem: (item) => set((state) => (
+        state.inventory.includes(item) ? state : { inventory: [...state.inventory, item] }
+      )),
       removeItem: (item) => set((state) => ({ inventory: state.inventory.filter(i => i !== item) })),
-      addEvidence: (evidence) => set((state) => ({ evidence: [...state.evidence, evidence] })),
-      decreaseSanity: (amount) => set((state) => ({ sanity: Math.max(0, state.sanity - amount) })),
+      addEvidence: (evidence) => set((state) => (
+        state.evidence.includes(evidence) ? state : { evidence: [...state.evidence, evidence] }
+      )),
+      // delta is signed: negative values decrease sanity, positive increase it
+      decreaseSanity: (delta) => set((state) => ({ sanity: Math.max(0, state.sanity + delta) })),
       // Remove the item from inventory and restore sanity in one atomic update
       useItem: (item, sanityRestore) => set((state) => ({
         inventory: state.inventory.filter(i => i !== item),

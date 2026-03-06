@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/Conjuring-game/',
   plugins: [react()],
   build: {
-    // Output to 'dist/' — the GitHub Actions workflow uploads this directory
-    outDir: 'dist',
+    // Output to 'docs/' — matches the GitHub Pages source directory
+    outDir: 'docs',
   },
 })

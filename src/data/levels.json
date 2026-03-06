@@ -128,8 +128,9 @@
       {
         "text": "Open the window and attempt to signal outside — you need confirmation you are still connected to the real world",
         "consequence": {
-          "text": "The window opens. The outside is wrong.\n\nThe oak tree in the yard — the one Bathsheba was hanged from — is the only thing moving in a landscape otherwise frozen as a photograph. Its branches move in a wind you cannot feel. Its shape in the dark is unmistakably the shape of a person with arms raised.\n\nSomething scratches the outside of the window glass from below, as though climbing. The scratch marks are fingernails: deliberate, patient, climbing upward. They reach the sill. They stop.\n\nYou close the window. The scratching continues from inside.",
+          "text": "The window opens. The outside is wrong.\n\nThe oak tree in the yard — the one Bathsheba was hanged from — is the only thing moving in a landscape otherwise frozen as a photograph. Its branches move in a wind you cannot feel. Its shape in the dark is unmistakably the shape of a person with arms raised.\n\nSomething scratches the outside of the window glass from below, as though climbing. The scratch marks are fingernails: deliberate, patient, climbing upward. They reach the sill. They stop.\n\nYou close the window. The scratching continues from inside.\n\nOn the sill, left behind by whoever opened this window last, is a tarnished brass key engraved with a confessional cross.",
           "sanityChange": -18,
+          "item": "confessional key",
           "evidence": "External paranormal activity — Bathsheba's oak, active scratching",
           "nextLevel": 5
         }
@@ -266,8 +267,9 @@
       {
         "text": "Find and read the Warrens' case notes — their conclusions are the only reliable guide",
         "consequence": {
-          "text": "The Warrens' notebook is in the third box. Ed's handwriting is precise, clinical. His final entry from this house: 'Bathsheba Sherman was a vessel, not a source. What used her is still here. Still using. The house is not the haunting — the house is the body. The entity is the soul inside it. You cannot exorcise a soul from its own body. You can only ask it to leave. You can only make leaving seem preferable to staying.'\n\nLorraine's addendum, in smaller handwriting: 'It will not leave willingly. Give it no choice. Give it something it fears more than remaining. We brought the cross. We brought the prayer. We left both here for the one who comes after us. God keep you.'",
+          "text": "The Warrens' notebook is in the third box. Ed's handwriting is precise, clinical. His final entry from this house: 'Bathsheba Sherman was a vessel, not a source. What used her is still here. Still using. The house is not the haunting — the house is the body. The entity is the soul inside it. You cannot exorcise a soul from its own body. You can only ask it to leave. You can only make leaving seem preferable to staying.'\n\nLorraine's addendum, in smaller handwriting: 'It will not leave willingly. Give it no choice. Give it something it fears more than remaining. We brought the cross. We brought the prayer. We left both here for the one who comes after us. God keep you.'\n\nBehind the notebook, wrapped in a cloth marked with a red cross: a vial of holy water, sealed in wax. Lorraine's label reads: 'Blessed by Father Achampong. Carry this.'",
           "sanityChange": -5,
+          "item": "holy water",
           "evidence": "Warren case notes — entity classification, expulsion methodology",
           "nextLevel": 4
         }
