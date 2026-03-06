@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "title": "Entrance Hall",
+    "description": "You stand in the grand entrance hall of the Conjuring house. Shadows dance on the walls, and a cold breeze whispers your name.",
+    "decisions": [
+      {
+        "text": "Enter the Chapel",
+        "consequence": {
+          "text": "You step into the sacred space, feeling a presence watching you.",
+          "sanityChange": -5,
+          "item": "holy water",
+          "nextLevel": 2
+        }
+      },
+      {
+        "text": "Descend to the Basement",
+        "consequence": {
+          "text": "The stairs creak under your feet. You hear distant screams.",
+          "sanityChange": -10,
+          "evidence": "cold spot",
+          "nextLevel": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Chapel",
+    "description": "The chapel is dimly lit by flickering candles. A cross hangs on the wall, but it seems to move when you're not looking.",
+    "decisions": [
+      {
+        "text": "Pray at the altar",
+        "consequence": {
+          "text": "You feel a momentary peace, but then the candles extinguish.",
+          "sanityChange": 5,
+          "nextLevel": 4
+        }
+      },
+      {
+        "text": "Search for hidden items",
+        "consequence": {
+          "text": "You find a confessional key.",
+          "item": "key",
+          "nextLevel": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Basement",
+    "description": "The basement is damp and cold. Chains hang from the ceiling, and you see strange symbols on the walls.",
+    "decisions": [
+      {
+        "text": "Examine the symbols",
+        "consequence": {
+          "text": "The symbols glow faintly. You record them as evidence.",
+          "evidence": "ritual symbols",
+          "sanityChange": -15,
+          "nextLevel": 6
+        }
+      },
+      {
+        "text": "Leave quickly",
+        "consequence": {
+          "text": "You escape, but the door slams shut behind you.",
+          "nextLevel": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Attic",
+    "description": "The attic is filled with old trunks and cobwebs. A rocking chair moves on its own.",
+    "decisions": [
+      {
+        "text": "Open a trunk",
+        "consequence": {
+          "text": "You find an old camera.",
+          "item": "camera",
+          "nextLevel": 7
+        }
+      },
+      {
+        "text": "Sit in the chair",
+        "consequence": {
+          "text": "The chair rocks violently. You see a ghost.",
+          "evidence": "ghost sighting",
+          "sanityChange": -20,
+          "nextLevel": 8
+        }
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Confessional Room",
+    "description": "You enter the confessional. Whispers echo from the other side.",
+    "decisions": [
+      {
+        "text": "Listen to the whispers",
+        "consequence": {
+          "text": "You capture EVP recordings.",
+          "evidence": "EVP recordings",
+          "sanityChange": -10,
+          "nextLevel": 9
+        }
+      },
+      {
+        "text": "Break the door",
+        "consequence": {
+          "text": "You find a hidden tunnel.",
+          "nextLevel": 7
+        }
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Ritual Room",
+    "description": "A room with a pentagram on the floor. Candles burn low.",
+    "decisions": [
+      {
+        "text": "Extinguish the candles",
+        "consequence": {
+          "text": "The room darkens. You find a cursed relic.",
+          "item": "cursed relic",
+          "sanityChange": -25,
+          "nextLevel": 10
+        }
+      },
+      {
+        "text": "Leave",
+        "consequence": {
+          "text": "You back away slowly.",
+          "nextLevel": 4
+        }
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Hidden Tunnel",
+    "description": "A narrow tunnel leads deeper into the house.",
+    "decisions": [
+      {
+        "text": "Follow the tunnel",
+        "consequence": {
+          "text": "You emerge in the library.",
+          "nextLevel": 8
+        }
+      },
+      {
+        "text": "Turn back",
+        "consequence": {
+          "text": "You return to the confessional.",
+          "nextLevel": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Library",
+    "description": "Bookshelves tower above you. Some books are chained.",
+    "decisions": [
+      {
+        "text": "Read a forbidden book",
+        "consequence": {
+          "text": "The text drives you mad.",
+          "sanityChange": -30,
+          "nextLevel": 9
+        }
+      },
+      {
+        "text": "Search for clues",
+        "consequence": {
+          "text": "You find a map to the final chamber.",
+          "nextLevel": 10
+        }
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Bedroom Corridor",
+    "description": "A long corridor with doors to bedrooms. Footsteps echo.",
+    "decisions": [
+      {
+        "text": "Enter a bedroom",
+        "consequence": {
+          "text": "You see a figure in the mirror.",
+          "evidence": "ghost sighting",
+          "sanityChange": -15,
+          "nextLevel": 10
+        }
+      },
+      {
+        "text": "Run to the end",
+        "consequence": {
+          "text": "You reach the final chamber.",
+          "nextLevel": 10
+        }
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Final Chamber",
+    "description": "You reach the heart of the house. The entity awaits.",
+    "decisions": [
+      {
+        "text": "Confront the entity",
+        "consequence": {
+          "text": "You survived the night!",
+          "nextLevel": 11
+        }
+      },
+      {
+        "text": "Use holy water",
+        "consequence": {
+          "text": "The entity recoils. You escape with evidence.",
+          "nextLevel": 11
+        }
+      }
+    ]
+  }
+]
