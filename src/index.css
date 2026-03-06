@@ -2,6 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────
+   CSS Custom Properties — Theme Variables
+   :root  = Light mode (default)
+   .dark  = Dark mode (applied to <html> by useTheme)
+───────────────────────────────────────────── */
+:root {
+  /* Backgrounds: aged-parchment / sepia horror aesthetic */
+  --color-bg-primary:   #f5f0e8;
+  --color-bg-secondary: #ede5d8;
+  --color-bg-panel:     rgba(237, 229, 216, 0.92);
+
+  /* Text: near-black for strong WCAG-AA contrast on light bg */
+  --color-text-primary:   #1a0a00;
+  --color-text-secondary: #57534e;
+  --color-text-muted:     #78716c;
+
+  /* Borders & chrome */
+  --color-border:   #b8af9e;
+  --color-red:      #991b1b;
+  --color-red-dark: #7f1d1d;
+
+  /* Scrollbar */
+  --color-scrollbar-track: #d6cfc5;
+  --color-scrollbar-thumb: #a8a09a;
+}
+
+.dark {
+  /* Backgrounds: pitch black */
+  --color-bg-primary:   #000000;
+  --color-bg-secondary: #111827;
+  --color-bg-panel:     rgba(31, 41, 55, 0.8);
+
+  /* Text: white on dark for strong WCAG-AA contrast */
+  --color-text-primary:   #ffffff;
+  --color-text-secondary: #d1d5db;
+  --color-text-muted:     #6b7280;
+
+  /* Borders & chrome */
+  --color-border:   #374151;
+  --color-red:      #991b1b;
+  --color-red-dark: #7f1d1d;
+
+  /* Scrollbar */
+  --color-scrollbar-track: #1f2937;
+  --color-scrollbar-thumb: #4b5563;
+}
+
+/* ─────────────────────────────────────────────
+   Base Reset
+───────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -15,59 +65,52 @@ html, body, #root {
 
 body {
   font-family: 'Crimson Text', 'Georgia', serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark mode (default and only mode) */
-body {
-  @apply bg-black text-white;
-}
-
-/* Typography */
+/* ─────────────────────────────────────────────
+   Typography
+───────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Crimson Text', serif;
   font-weight: 600;
 }
 
-/* Psychological horror effects */
+/* ─────────────────────────────────────────────
+   Psychological Horror Animations
+───────────────────────────────────────────── */
 @keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-2px, 2px); }
+  40%  { transform: translate(-2px, -2px); }
+  60%  { transform: translate(2px, 2px); }
+  80%  { transform: translate(2px, -2px); }
   100% { transform: translate(0); }
 }
 
 @keyframes flicker {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.95; }
+  50%       { opacity: 0.95; }
 }
 
 @keyframes heartbeat {
   0%, 100% { opacity: 1; }
-  25% { opacity: 0.8; }
-  50% { opacity: 0.6; }
-  75% { opacity: 0.8; }
+  25%       { opacity: 0.8; }
+  50%       { opacity: 0.6; }
+  75%       { opacity: 0.8; }
 }
 
 @keyframes whisper {
-  0% { filter: blur(0); opacity: 0; transform: translateX(-10px); }
-  50% { opacity: 0.5; }
+  0%   { filter: blur(0); opacity: 0; transform: translateX(-10px); }
+  50%  { opacity: 0.5; }
   100% { filter: blur(0); opacity: 0; transform: translateX(10px); }
 }
 
-.glitch {
-  animation: glitch 0.3s infinite;
-}
-
-.flicker {
-  animation: flicker 0.15s infinite;
-}
-
-.heartbeat {
-  animation: heartbeat 0.8s ease-in-out infinite;
-}
+.glitch    { animation: glitch 0.3s infinite; }
+.flicker   { animation: flicker 0.15s infinite; }
+.heartbeat { animation: heartbeat 0.8s ease-in-out infinite; }
 
 .whisper {
   animation: whisper 2s ease-in-out infinite;
@@ -76,32 +119,43 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9em;
 }
 
-/* Horror button styles */
+/* ─────────────────────────────────────────────
+   Horror Button  (theme-aware via CSS vars)
+───────────────────────────────────────────── */
 .horror-button {
-  @apply relative px-4 py-3 bg-red-900 text-white rounded border border-red-700 transition-all duration-300;
+  @apply relative px-4 py-3 rounded border transition-all duration-300;
   font-family: 'Crimson Text', serif;
+  background-color: var(--color-red-dark);
+  color: #ffffff;
+  border-color: var(--color-red);
 }
 
 .horror-button:hover {
-  @apply bg-red-800 border-red-600 shadow-[0_0_10px_rgba(127,29,29,0.8)];
+  background-color: var(--color-red);
+  border-color: #dc2626;
+  box-shadow: 0 0 10px rgba(127, 29, 29, 0.7);
 }
 
-.horror-button:active {
-  @apply scale-95;
-}
+.horror-button:active   { @apply scale-95; }
+.horror-button:disabled { @apply opacity-50 cursor-not-allowed; }
 
-.horror-button:disabled {
-  @apply opacity-50 cursor-not-allowed;
-}
-
-/* Story text styling */
+/* ─────────────────────────────────────────────
+   Story Text
+───────────────────────────────────────────── */
 .story-text {
   @apply leading-relaxed text-lg;
   font-family: 'Crimson Text', serif;
+  color: var(--color-text-primary);
+}
+
+/* Subtle shadow only in dark mode so light parchment bg stays clean */
+.dark .story-text {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Sanity effect - low sanity distortion */
+/* ─────────────────────────────────────────────
+   Sanity Effects
+───────────────────────────────────────────── */
 .sanity-low {
   filter: blur(0.5px) brightness(0.95);
   animation: flicker 0.1s infinite;
@@ -112,54 +166,57 @@ h1, h2, h3, h4, h5, h6 {
   animation: glitch 0.2s infinite;
 }
 
-/* Panel styling */
+/* ─────────────────────────────────────────────
+   Game Panel  (theme-aware via CSS vars)
+───────────────────────────────────────────── */
 .game-panel {
-  @apply bg-gray-900 border border-gray-700 rounded p-4;
-  background: radial-gradient(circle at top left, rgba(31,41,55,0.8), rgba(0,0,0,0.95));
+  background-color: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  padding: 1rem;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .story-text {
-    @apply text-base;
-  }
-
-  .horror-button {
-    @apply py-2 px-3 text-sm;
-  }
+/* Dark mode: richer radial gradient */
+.dark .game-panel {
+  background: radial-gradient(circle at top left, rgba(31,41,55,0.85), rgba(0,0,0,0.97));
 }
 
-/* Loading animation */
+/* ─────────────────────────────────────────────
+   Loading / Pulse Glow
+───────────────────────────────────────────── */
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 5px rgba(239, 68, 68, 0.5); }
-  50% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.8); }
+  50%       { box-shadow: 0 0 20px rgba(239, 68, 68, 0.8); }
 }
 
-.pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 
-/* Dark overlay for intense moments */
+/* ─────────────────────────────────────────────
+   Dark Overlay (atmosphere)
+───────────────────────────────────────────── */
 .dark-overlay {
   @apply fixed inset-0 bg-black pointer-events-none;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.dark-overlay.active {
-  opacity: 0.3;
-}
+.dark-overlay.active { opacity: 0.3; }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-gray-800;
-}
-
+/* ─────────────────────────────────────────────
+   Scrollbar
+───────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--color-scrollbar-track); }
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-600 rounded hover:bg-gray-500;
+  background: var(--color-scrollbar-thumb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { filter: brightness(1.2); }
+
+/* ─────────────────────────────────────────────
+   Responsive
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .story-text    { @apply text-base; }
+  .horror-button { @apply py-2 px-3 text-sm; }
 }

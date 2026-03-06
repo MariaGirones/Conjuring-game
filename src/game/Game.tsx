@@ -10,6 +10,7 @@ import EvidenceTracker from '../components/EvidenceTracker'
 import StartScreen from '../components/StartScreen'
 import EndingScreen from '../components/EndingScreen'
 import AudioToggle from '../components/AudioToggle'
+import ThemeToggle from '../components/ThemeToggle'
 
 const engine = new StoryEngine()
 
@@ -130,20 +131,22 @@ function Game() {
     return <EndingScreen ending={ending} sanity={sanity} evidence={evidence} />
   }
 
-  // Show game over if not alive (shouldn't reach here with proper ending handling)
+  // Show game over if not alive
   if (!alive) {
     return <EndingScreen ending="DEAD" sanity={sanity} evidence={evidence} />
   }
 
   return (
-    <div className="flex flex-col h-screen bg-black text-white">
+    <div className="flex flex-col h-screen bg-stone-100 text-stone-900 dark:bg-black dark:text-white">
       {/* Header with controls */}
-      <div className="flex items-center justify-between p-3 border-b border-gray-700 bg-gray-900">
+      <div className="flex items-center justify-between p-3 border-b border-stone-300 bg-stone-200 dark:border-gray-700 dark:bg-gray-900">
         <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-serif font-bold">THE CONJURING</h1>
-          <span className="text-sm text-gray-500">Level {currentLevel}/10</span>
+          <h1 className="text-2xl font-serif font-bold text-stone-900 dark:text-white">THE CONJURING</h1>
+          <span className="text-sm text-stone-500 dark:text-gray-500">Level {currentLevel}/10</span>
         </div>
         <div className="flex gap-2">
+          {/* Theme toggle — switches Light / Dark mode */}
+          <ThemeToggle />
           <AudioToggle />
         </div>
       </div>
@@ -182,15 +185,17 @@ function Game() {
 
           {/* Player info */}
           <div className="game-panel text-xs">
-            <div className="text-gray-500">Currently in</div>
-            <div className="text-white font-serif">{engine.getLevel(currentLevel)?.title || 'Unknown Location'}</div>
+            <div className="text-stone-500 dark:text-gray-500">Currently in</div>
+            <div className="text-stone-900 font-serif dark:text-white">
+              {engine.getLevel(currentLevel)?.title || 'Unknown Location'}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Psychological effect messages */}
+      {/* Psychological effect message */}
       {showPsychologicalEffect && sanity < 40 && (
-        <div className="fixed bottom-4 left-4 text-red-400 text-sm italic animate-pulse">
+        <div className="fixed bottom-4 left-4 text-red-600 dark:text-red-400 text-sm italic animate-pulse">
           <p>★ You feel something watching you...</p>
         </div>
       )}

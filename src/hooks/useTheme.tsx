@@ -1,20 +1,39 @@
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
+
+type Theme = 'dark' | 'light'
 
 interface ThemeContextType {
-  theme: 'dark'
+  theme: Theme
   toggleTheme: () => void
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Dark mode only - no theme switching
+  // Read saved preference from localStorage; fall back to 'dark' for horror atmosphere
+  const [theme, setTheme] = useState<Theme>(() => {
+    const stored = localStorage.getItem('conjuring-theme')
+    return stored === 'light' ? 'light' : 'dark'
+  })
+
+  // Apply/remove the 'dark' class on <html> whenever the theme changes
+  useEffect(() => {
+    const root = document.documentElement
+    if (theme === 'dark') {
+      root.classList.add('dark')
+    } else {
+      root.classList.remove('dark')
+    }
+    // Persist choice across sessions
+    localStorage.setItem('conjuring-theme', theme)
+  }, [theme])
+
   const toggleTheme = () => {
-    // Theme toggle disabled - dark mode only
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'))
   }
 
   return (
-    <ThemeContext.Provider value={{ theme: 'dark', toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )

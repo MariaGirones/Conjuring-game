@@ -11,7 +11,7 @@ function SanityMeter() {
     return 'Breaking Apart'
   }
 
-  const getColorClass = () => {
+  const getBarClass = () => {
     if (sanity > 70) return 'from-green-600 to-green-500'
     if (sanity > 50) return 'from-yellow-600 to-yellow-500'
     if (sanity > 30) return 'from-orange-600 to-orange-500'
@@ -19,21 +19,34 @@ function SanityMeter() {
     return 'from-red-900 to-red-700 animate-heartbeat'
   }
 
+  const getValueColor = () => {
+    if (sanity > 50) return 'text-green-700 dark:text-green-400'
+    if (sanity > 30) return 'text-yellow-700 dark:text-yellow-400'
+    return 'text-red-700 dark:text-red-400'
+  }
+
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <h3 className="text-lg font-serif font-bold text-gray-300">Sanity</h3>
-        <span className={`text-sm font-bold ${sanity > 50 ? 'text-green-400' : sanity > 30 ? 'text-yellow-400' : 'text-red-400'}`}>
+        <h3 className="text-lg font-serif font-bold text-stone-700 dark:text-gray-300">Sanity</h3>
+        <span className={`text-sm font-bold ${getValueColor()}`}>
           {sanity}/100
         </span>
       </div>
-      <div className="bg-gray-800 h-6 rounded border border-gray-700 overflow-hidden">
+
+      {/* Bar track */}
+      <div className="h-6 rounded border overflow-hidden
+        bg-stone-300 border-stone-400
+        dark:bg-gray-800 dark:border-gray-700">
         <div
-          className={`h-full transition-all duration-300 bg-gradient-to-r ${getColorClass()}`}
+          className={`h-full transition-all duration-300 bg-gradient-to-r ${getBarClass()}`}
           style={{ width: `${sanity}%` }}
-        ></div>
+        />
       </div>
-      <div className="text-xs text-gray-500 mt-2 text-center">{getStatusText()}</div>
+
+      <div className="text-xs mt-2 text-center text-stone-500 dark:text-gray-500">
+        {getStatusText()}
+      </div>
     </div>
   )
 }
