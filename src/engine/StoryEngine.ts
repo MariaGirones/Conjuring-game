@@ -8,6 +8,8 @@ interface Level {
 interface Decision {
   text: string
   consequence: Consequence
+  minSanity?: number
+  requiredItem?: string
 }
 
 interface Consequence {

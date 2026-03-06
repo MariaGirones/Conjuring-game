@@ -20,7 +20,8 @@
           "sanityChange": -8,
           "evidence": "cold spot",
           "nextLevel": 3
-        }
+        },
+        "minSanity": 70
       },
       {
         "text": "Explore the Library (right corridor)",
@@ -150,7 +151,8 @@
           "evidence": "EVP recordings",
           "sanityChange": -18,
           "nextLevel": 6
-        }
+        },
+        "requiredItem": "confessional key"
       },
       {
         "text": "Pry open the confessional screen",
@@ -160,7 +162,8 @@
           "evidence": "ritual evidence",
           "item": "crucifix",
           "nextLevel": 7
-        }
+        },
+        "minSanity": 50
       },
       {
         "text": "Leave the confessional and move deeper into the mansion",

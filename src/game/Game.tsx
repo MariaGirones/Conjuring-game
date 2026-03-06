@@ -51,8 +51,17 @@ function Game() {
 
     const level = engine.getLevel(currentLevel)
     if (level) {
+      let availableDecisions = level.decisions
+
+      // Filter decisions based on conditions
+      availableDecisions = availableDecisions.filter(decision => {
+        if (decision.minSanity && sanity < decision.minSanity) return false
+        if (decision.requiredItem && !inventory.includes(decision.requiredItem)) return false
+        return true
+      })
+
       setCurrentStory(level.description)
-      setDecisions(level.decisions)
+      setDecisions(availableDecisions)
 
       // Trigger psychological effects at low sanity
       if (sanity < 40) {
