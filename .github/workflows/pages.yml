@@ -44,8 +44,7 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Vite builds to 'dist/' by default; match vite.config.ts build.outDir
-          path: dist
+          path: docs
 
       - name: Deploy to GitHub Pages
         id: deployment
